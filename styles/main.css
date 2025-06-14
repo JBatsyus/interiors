@@ -414,8 +414,33 @@ a[class] {
 .icon--ellipse::after {
   background-image: url("../../icons/ellipse.svg");
 }
-.icon--down::after {
-  background-image: url("../../icons/arrow-down.svg");
+.icon--arrow-left {
+  cursor: pointer;
+}
+.icon--arrow-left::after {
+  height: 64px;
+  width: 32px;
+  background-image: url("../../icons/arrow-left.svg");
+}
+@media (width <= 47.99875rem) {
+  .icon--arrow-left::after {
+    height: 24px;
+    width: 12px;
+  }
+}
+.icon--arrow-right {
+  cursor: pointer;
+}
+.icon--arrow-right::after {
+  height: 64px;
+  width: 32px;
+  background-image: url("../../icons/arrow-right.svg");
+}
+@media (width <= 47.99875rem) {
+  .icon--arrow-right::after {
+    height: 24px;
+    width: 12px;
+  }
 }
 
 .logo {
@@ -443,6 +468,8 @@ a[class] {
   z-index: 100;
   position: absolute;
   top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   padding-block: 52px;
   height: var(--header-height);
   display: flex;
@@ -703,6 +730,75 @@ a[class] {
   .steps-list__text {
     line-height: 1.14;
   }
+}
+
+.workflow-gallery__wrap {
+  width: 100%;
+}
+.workflow-gallery__swiper {
+  position: relative;
+}
+.workflow-gallery__item {
+  aspect-ratio: 12/5;
+  height: 860px;
+  width: 100%;
+}
+@media (width <= 63.99875rem) {
+  .workflow-gallery__item {
+    height: auto;
+    aspect-ratio: 48/35;
+  }
+}
+@media (width <= 47.99875rem) {
+  .workflow-gallery__item {
+    aspect-ratio: 1/2;
+    max-height: 400px;
+  }
+}
+.workflow-gallery__slide-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.workflow-gallery__desc {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 80px;
+  box-sizing: border-box;
+}
+@media (width <= 47.99875rem) {
+  .workflow-gallery__desc {
+    bottom: 40px;
+  }
+}
+.workflow-gallery__desc p {
+  font-size: clamp(1.1111111111rem, 0.7521367521rem + 1.7948717949vw, 2.6666666667rem);
+  font-weight: 400;
+  line-height: 1.04167;
+  width: 100%;
+  max-width: 1219px;
+}
+@media (width <= 47.99875rem) {
+  .workflow-gallery__desc p {
+    line-height: 1.1;
+  }
+}
+.workflow-gallery .container-nav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.workflow-gallery__nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .footer {

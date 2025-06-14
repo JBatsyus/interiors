@@ -7,6 +7,7 @@
     <title>Home interiors</title>
     <script src="./scripts/main.js" defer></script>
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./libs/plugins/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -15,7 +16,7 @@
         <a class="header__logo logo" href="/" title="Home" aria-label="Home">
             <img src="./icons/logo.svg" alt="" class="logo__image" width="258" height="36">
         </a>
-        <!-- <nav class="header__menu" aria-label="Основная">
+        <nav class="header__menu visible-mobile" aria-label="Основная">
             <ul class="header__menu-list">
                 <li class="header__menu-item">
                     <a class="header__menu-link" href="#philosophy">О нас</a>
@@ -30,8 +31,8 @@
                     <a class="header__menu-link" href="#contacts">Контакты</a>
                 </li>
             </ul>
-        </nav> -->
-        <a class="header__contacts button" href="#connection">
+        </nav>
+        <a class="header__contacts button visible-mobile" href="#connection">
             <span class="icon icon--arrow"> Связаться</span>
         </a>
     </header>
@@ -108,6 +109,46 @@
             </div>
         </section>
         <!--—END SECTION WORKS-->
+        <!--—BEGIN WORKFLOW GALLERY-->
+        <section class="workflow-gallery">
+            <h2 class="visually-hidden">Галерея наших работ</h2>
+            <div class="workflow-gallery__wrap">
+                <div class="swiper workflow-gallery__swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="workflow-gallery__item">
+                                <img class="workflow-gallery__slide-image" src="./images/slide1.png" alt="" width="1920"
+                                    height="860" loading="lazy">
+                            </div>
+                            <div class="workflow-gallery__desc container">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit maximus felis id.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="workflow-gallery__item">
+                                <img class="workflow-gallery__slide-image" src="./images/bgk.png" alt="" width="1920"
+                                    height="860" loading="lazy">
+                            </div>
+                            <div class="workflow-gallery__desc container">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit maximus felis id.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" container-nav container">
+                        <div class="workflow-gallery__nav">
+                            <div class="icon icon--arrow-left">
+                            </div>
+                            <div class="icon icon--arrow-right">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--—END WORKFLOW GALLERY-->
+        <!--—BEGIN STEPS SECTION-->
         <section class="steps-section section">
             <div class="steps-section__container container">
                 <h2 class="visually-hidden">Этапы работы</h2>
@@ -162,7 +203,9 @@
                 </div>
             </div>
         </section>
+        <!--—END STEPS SECTION-->
     </main>
+    <!--—BEGIN FOOTER -->
     <footer class="footer">
         <div class="footer__container container">
             <!-- Верхняя часть футера -->
@@ -197,6 +240,9 @@
             </div>
         </div>
     </footer>
+    <!--—END  FOOTER -->
+    <script src="./libs/plugins/swiper-bundle.min.js"></script>
+    <script src="./libs/plugins/jquery.min.js"></script>
 </body>
 
 </html>

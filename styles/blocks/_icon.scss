@@ -31,9 +31,35 @@
         }
     }
 
-    &--down {
+    &--arrow-left {
+        cursor: pointer;
+
         &::after {
-            background-image: url('../../icons/arrow-down.svg');
+            height: 64px;
+            width: 32px;
+
+            background-image: url('../../icons/arrow-left.svg');
+
+            @include mobile {
+                height: 24px;
+                width: 12px;
+
+            }
+        }
+    }
+
+    &--arrow-right {
+        cursor: pointer;
+
+        &::after {
+            height: 64px;
+            width: 32px;
+            background-image: url('../../icons/arrow-right.svg');
+             @include mobile {
+                height: 24px;
+                width: 12px;
+
+            }
         }
     }
 
