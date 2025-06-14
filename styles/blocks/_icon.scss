@@ -30,6 +30,13 @@
             background-image: url('../../icons/ellipse.svg');
         }
     }
+        &--down {
+        
+
+        &::after {
+            background-image: url('../../icons/arrow-down.svg');
+        }
+    }
 
     &--arrow-left {
         cursor: pointer;

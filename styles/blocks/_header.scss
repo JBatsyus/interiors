@@ -17,10 +17,33 @@
     background-color: transparent;
 
     &__menu {
-        &-list{
-        display: flex;
-        align-items: center;
-        column-gap: 40px;
+        &-list {
+            display: flex;
+            align-items: center;
+            column-gap: 40px;
+        }
+
+        &-link {
+            position: relative;
+            text-decoration: none;
+            padding-bottom: 7px;
+
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: 3px;
+                background-color: var(--color-white);
+                transition: width 0.2s ease-out;
+
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
         }
     }
 }

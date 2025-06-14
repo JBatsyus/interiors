@@ -414,6 +414,9 @@ a[class] {
 .icon--ellipse::after {
   background-image: url("../../icons/ellipse.svg");
 }
+.icon--down::after {
+  background-image: url("../../icons/arrow-down.svg");
+}
 .icon--arrow-left {
   cursor: pointer;
 }
@@ -481,6 +484,24 @@ a[class] {
   display: flex;
   align-items: center;
   column-gap: 40px;
+}
+.header__menu-link {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 7px;
+}
+.header__menu-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-white);
+  transition: width 0.2s ease-out;
+}
+.header__menu-link:hover::after {
+  width: 100%;
 }
 
 /*---------HEADER (END)--------*/
