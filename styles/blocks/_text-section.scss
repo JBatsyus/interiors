@@ -1,0 +1,63 @@
+@use "../helpers"as *;
+
+.text-section {
+    padding-block: 200px;
+
+    @include mobile {
+        padding-block: 40px;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 30px;
+        align-items: start;
+
+        @include mobile {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+
+    &__title {
+        grid-column: 1 / span 4;
+
+        @include mobile {
+            grid-column: 1;
+        }
+    }
+
+    &__text {
+        grid-column: 5 / span 8;
+
+        @include mobile {
+            grid-column: 1;
+        }
+    }
+
+    &__paragraph {
+        &--lead {
+            @include fluid-text(48, 20);
+            font-weight: 400;
+            line-height: 1.04;
+            margin-bottom: 55px;
+
+            @include mobile {
+                line-height: 1.1;
+            }
+        }
+
+        &--desc {
+            @include fluid-text(26, 14);
+            font-family: var(--font-family-accent);
+            font-weight: 400;
+            line-height: 1.15385;
+            width: 100%;
+            max-width: 530px;
+
+            @include mobile {
+                line-height: 1.14;
+            }
+        }
+    }
+}

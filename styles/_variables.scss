@@ -1,0 +1,37 @@
+@use 'helpers'as *;
+
+:root {
+    --color-base: #84644e;
+    --color-white: #FFFFFF;
+    --color-light-gray: #D9D9D9;
+    --color-light-gray-2: #BDBDBD;
+    --color-gray: #696969;
+
+
+
+    --font-family-base: 'EtudeNoire', sans-serif;
+    --font-family-accent: 'RobotoCondensed', sans-serif;
+    // ширина контейнера
+    --container-width: #{rem(1748)};
+    // внутренние горизонтальные оступы - смотреть на мобильной версии
+    --container-padding-x: #{rem(16)};
+
+    --transition-duration: 0.4s;
+
+    // --100vw: calc(100vw - var(--scrollbar-width));
+    --header-height: 140px;
+
+    // контейнер на лэптопе
+    @include laptop {
+        --container-width: #{rem(1280)};
+    }
+
+    @include tablet {
+        --container-padding-x: #{rem(32)};
+
+    }
+
+    @include mobile {
+        --container-padding-x: #{rem(16)};
+    }
+}

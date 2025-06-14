@@ -1,0 +1,33 @@
+@use "../helpers"as *;
+
+.marquee {
+    display: flex;
+    width: fit-content;
+    will-change: transform;
+    animation: marquee 40s linear infinite;
+
+    @include tablet {
+        margin-bottom: 120px;
+    }
+
+    @include mobile {
+        margin-bottom: 35px;
+    }
+
+    &-text {
+        white-space: nowrap;
+        padding-right: 30px;
+        flex-shrink: 0;
+
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

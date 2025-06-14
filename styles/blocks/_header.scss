@@ -1,0 +1,27 @@
+@use "../helpers"as *;
+
+
+/*---------HEADER (START)--------*/
+.header {
+    z-index: 100;
+    // position: sticky;
+    position: absolute;
+    top: 0;
+    padding-block: 52px;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+
+    &__menu {
+        &-list{
+        display: flex;
+        align-items: center;
+        column-gap: 40px;
+        }
+    }
+}
+
+
+/*---------HEADER (END)--------*/

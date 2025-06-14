@@ -1,0 +1,40 @@
+@use "../helpers"as *;
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 20px;
+
+    &::after {
+        --size: 16px;
+
+        @include square(var(--size));
+
+        content: '';
+        flex-shrink: 0;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &--arrow {
+        &::after {
+            background-image: url('../../icons/arrow-top-right.svg');
+        }
+    }
+
+    &--ellipse {
+        column-gap: 30px;
+
+        &::after {
+            background-image: url('../../icons/ellipse.svg');
+        }
+    }
+
+    &--down {
+        &::after {
+            background-image: url('../../icons/arrow-down.svg');
+        }
+    }
+
+}
