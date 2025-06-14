@@ -204,6 +204,126 @@
             </div>
         </section>
         <!--—END STEPS SECTION-->
+        <section class="contact-section">
+            <div class="contact-section__container container">
+                <div class="contact-section__grid">
+                    <!-- Левая колонка с изображением (5 колонок) -->
+                    <div class="contact-section__image-col">
+                        <div class="contact-section__image-wrapper">
+                            <img src="./images/forma.png" alt="Контактное изображение" class="contact-section__image"
+                                loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Правая колонка с формой (7 колонок) -->
+                    <div class="contact-section__form-col">
+                        <div class="contact-form">
+                            <h2 class="contact-form__title">Связаться с нами</h2>
+
+                            <!-- Табы -->
+                            <div class="contact-form__tabs">
+                                <button type="button" class="contact-form__tab active" data-tab="client">Для
+                                    клиента</button>
+                                <button type="button" class="contact-form__tab" data-tab="partner">Для
+                                    партнеров</button>
+                            </div>
+
+                            <!-- Контент табов -->
+                            <div class="contact-form__content">
+                                <!-- Таб для клиентов -->
+                                <div class="contact-form__pane active" data-tab-content="client">
+                                    <p class="contact-form__description">Дате критикуом</p>
+
+                                    <form class="contact-form__form">
+                                        <div class="contact-form__field">
+                                            <label class="contact-form__label">Полное имя</label>
+                                            <input type="text" class="contact-form__input"
+                                                placeholder="Введите ваше имя">
+                                        </div>
+
+                                        <div class="contact-form__field">
+                                            <label class="contact-form__label">Email</label>
+                                            <input type="email" class="contact-form__input"
+                                                placeholder="Введите ваш Email">
+                                        </div>
+
+                                        <div class="contact-form__field">
+                                            <label class="contact-form__label">Номер телефона</label>
+                                            <div class="contact-form__phone-input">
+                                                <span class="contact-form__phone-prefix">+2</span>
+                                                <input type="tel" class="contact-form__input"
+                                                    placeholder="Введите номер телефона">
+                                            </div>
+                                        </div>
+
+                                        <div class="contact-form__checkbox">
+                                            <input type="checkbox" id="agreement-client"
+                                                class="contact-form__checkbox-input">
+                                            <label for="agreement-client" class="contact-form__checkbox-label">
+                                                Я согласен с <a href="#" class="contact-form__link">Условиями</a>
+                                            </label>
+                                        </div>
+
+                                        <button type="submit" class="contact-form__submit">Отправить</button>
+                                    </form>
+                                </div>
+
+                                <!-- Таб для партнеров -->
+                                <div class="contact-form__pane" data-tab-content="partner">
+                                    <p class="contact-form__description">Форма для потенциальных партнеров</p>
+
+                                    <form class="contact-form__form">
+                                        <div class="contact-form__field">
+                                            <label class="contact-form__label">Название компании</label>
+                                            <input type="text" class="contact-form__input"
+                                                placeholder="Введите название компании">
+                                        </div>
+
+                                        <div class="contact-form__field">
+                                            <label class="contact-form__label">Контактное лицо</label>
+                                            <input type="text" class="contact-form__input"
+                                                placeholder="Введите ваше имя">
+                                        </div>
+
+                                        <div class="contact-form__field">
+                                            <label class="contact-form__label">Email</label>
+                                            <input type="email" class="contact-form__input"
+                                                placeholder="Введите ваш Email">
+                                        </div>
+
+                                        <div class="contact-form__field">
+                                            <label class="contact-form__label">Номер телефона</label>
+                                            <div class="contact-form__phone-input">
+                                                <span class="contact-form__phone-prefix">+2</span>
+                                                <input type="tel" class="contact-form__input"
+                                                    placeholder="Введите номер телефона">
+                                            </div>
+                                        </div>
+
+                                        <div class="contact-form__field">
+                                            <label class="contact-form__label">Сообщение</label>
+                                            <textarea class="contact-form__textarea"
+                                                placeholder="Опишите ваше предложение"></textarea>
+                                        </div>
+
+                                        <div class="contact-form__checkbox">
+                                            <input type="checkbox" id="agreement-partner"
+                                                class="contact-form__checkbox-input">
+                                            <label for="agreement-partner" class="contact-form__checkbox-label">
+                                                Я согласен с <a href="#" class="contact-form__link">Условиями
+                                                    партнерства</a>
+                                            </label>
+                                        </div>
+
+                                        <button type="submit" class="contact-form__submit">Отправить заявку</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <!--—BEGIN FOOTER -->
     <footer class="footer" id="contacts">
