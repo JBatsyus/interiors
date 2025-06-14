@@ -83,18 +83,16 @@ a {
     }
 }
 
-// .section {
-//     padding-bottom: 150px;
 
-//     @include tablet {
-//         padding-bottom: 130px;
-//     }
+.section {
+    padding-block: 200px;
 
-//     @include mobile {
-//         padding-bottom: 100px;
-//     }
+    @include mobile {
+        padding-block: 40px;
+    }
 
-// }
+}
+
 // при фокусе на элементе, который доступен с клавиатуры, добавить аутлайн
 :focus-visible {
     outline: rem(2) dashed var(--color-white);
