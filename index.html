@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home interiors</title>
     <script src="./scripts/main.js" defer></script>
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./libs/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./libs/plugins/swiper-bundle.min.css" />
 </head>
 
 <body>
     <!--—BEGIN HEADER -->
     <header class="header container">
         <a class="header__logo logo" href="/" title="Home" aria-label="Home">
-            <img src="./icons/logo.svg" alt="" class="logo__image" width="258" height="36">
+            <img src="./icons/logo.svg" alt="" class="logo__image" width="258" height="36" />
         </a>
-        <nav class="header__menu visible-mobile" aria-label="Основная">
+        <nav class="header__menu visible-tablet" aria-label="Основная">
             <ul class="header__menu-list">
                 <li class="header__menu-item">
                     <a class="header__menu-link" href="#philosophy">О нас</a>
@@ -32,35 +32,87 @@
                 </li>
             </ul>
         </nav>
-        <a class="header__contacts button visible-mobile" href="#connection">
+        <a class="header__contacts button visible-laptop-s" href="#connection">
             <span class="icon icon--arrow"> Связаться</span>
         </a>
+        <div class="menu-humb ">
+            <div class="icon-humb">
+                <div class="icon-humb__line"></div>
+                <div class="icon-humb__line"></div>
+                <div class="icon-humb__line"></div>
+            </div>
+        </div>
     </header>
-
+    <!-- MOBILE MENU (START)  -->
+    <div class="menu-mob">
+        <div class="menu-mob__inner">
+            <nav class="menu-mob__nav">
+                <ul class="menu-mob__list">
+                    <li class="menu-mob__item">
+                        <a href="#philosophy" class="menu-mob__link">
+                            О нас<span class="icon icon--arrow"> </span>
+                        </a>
+                    </li>
+                    <li class="menu-mob__item">
+                        <a href="#product" class="menu-mob__link">
+                            Продукт <span class="icon icon--arrow"> </span>
+                        </a>
+                    </li>
+                    <li class="menu-mob__item">
+                        <a href="#finished-works" class="menu-mob__link">
+                            Готовые работы<span class="icon icon--arrow"> </span>
+                        </a>
+                    </li>
+                    <li class="menu-mob__item">
+                        <a href="#contacts" class="menu-mob__link">
+                            Контакты<span class="icon icon--arrow"> </span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <a class="button button-mob" href="#connection">
+                <span>Связаться</span>
+                <span class="icon icon--arrow"> </span>
+            </a>
+            <div class="menu-mob__bottom">
+                <h2 class="h2">Контакты</h2>
+                <div class="menu-mob__contacts">
+                    <a class="menu-mob__mail" href="mailto:info@ottees.ru" title="Email" aria-label="Email">
+                        info@ottees.ru
+                    </a>
+                    <span class="menu-mob__divider">|</span>
+                    <a class="menu-mob__phone" href="tel:+79997161762" title="Phone" aria-label="Phone">
+                        +7 999 716 17 62
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MOBILE MENU (END)  -->
     <!--—END HEADER -->
     <main>
         <!--—BEGIN SECTION HERO-->
-        <section class="hero" style="background-image: url('./images/bgk.png');">
+        <section class="hero" style="background-image: url('./images/bgk.png')">
             <div class="hero__container container">
                 <div class="hero__content">
                     <div class="hero__header">
                         <!-- Бегущая строка -->
                         <div class="hero__marquee h1 marquee" aria-hidden="true">
-                            <span class="marquee-text icon icon--ellipse ">Изысканно</span>
-                            <span class="marquee-text icon icon--ellipse">Концептуально</span>
-                            <span class="marquee-text icon icon--ellipse">Грациозно</span>
                             <span class="marquee-text icon icon--ellipse">Изысканно</span>
                             <span class="marquee-text icon icon--ellipse">Концептуально</span>
                             <span class="marquee-text icon icon--ellipse">Грациозно</span>
                             <span class="marquee-text icon icon--ellipse">Изысканно</span>
                             <span class="marquee-text icon icon--ellipse">Концептуально</span>
                             <span class="marquee-text icon icon--ellipse">Грациозно</span>
-
+                            <span class="marquee-text icon icon--ellipse">Изысканно</span>
+                            <span class="marquee-text icon icon--ellipse">Концептуально</span>
+                            <span class="marquee-text icon icon--ellipse">Грациозно</span>
                         </div>
                     </div>
                     <div class="hero__footer">
                         <span class="icon icon--down"> </span>
-                        <span class="h2">Мебель OTTEES — оттиск вашей индивидуальности в каждом предмете</span>
+                        <span class="h2">Мебель OTTEES — оттиск вашей индивидуальности в каждом
+                            предмете</span>
                     </div>
                 </div>
             </div>
@@ -74,15 +126,18 @@
 
                     <div class="text-section__text">
                         <p class="text-section__paragraph text-section__paragraph--lead">
-                            Каждое изделие способно идеально синхронизироваться с&nbsp;ритмом вашей жизни.
-                            Мы&nbsp;создаем интерьеры, в&nbsp;которых чувствуется душа&nbsp;&mdash; теплые, осмысленные,
-                            наполненные историей
+                            Каждое изделие способно идеально синхронизироваться
+                            с&nbsp;ритмом вашей жизни. Мы&nbsp;создаем интерьеры,
+                            в&nbsp;которых чувствуется душа&nbsp;&mdash; теплые,
+                            осмысленные, наполненные историей
                         </p>
                         <p class="text-section__paragraph text-section__paragraph--desc">
-                            Мы&nbsp;убеждены, что пространство должно вдохновлять, а&nbsp;не&nbsp;ограничивать. Ваш
-                            дом&nbsp;&mdash; это место, где вы&nbsp;устанавливаете правила, где каждый элемент
-                            подчеркивает уточнённый вкус и&nbsp;статус. Здесь нет места компромиссам&nbsp;&mdash; только
-                            безупречные материалы, продуманные до&nbsp;мелочей конструкции и&nbsp;гармония, которая
+                            Мы&nbsp;убеждены, что пространство должно вдохновлять,
+                            а&nbsp;не&nbsp;ограничивать. Ваш дом&nbsp;&mdash; это место, где
+                            вы&nbsp;устанавливаете правила, где каждый элемент подчеркивает
+                            уточнённый вкус и&nbsp;статус. Здесь нет места
+                            компромиссам&nbsp;&mdash; только безупречные материалы,
+                            продуманные до&nbsp;мелочей конструкции и&nbsp;гармония, которая
                             становится продолжением вашей личности.
                         </p>
                     </div>
@@ -98,11 +153,13 @@
 
                     <div class="text-section__text">
                         <p class="text-section__paragraph--lead">
-                            Рады представить галерею готовых работ OTTEES&nbsp;&mdash; здесь воплощены наши лучшие
-                            решения. Каждый проект отражает безупречную детализацию, гармонию форм и&nbsp;индивидуальный
-                            подход. Выбирайте свой идеал: от&nbsp;лаконичного минимализма до&nbsp;роскошной
-                            классики&nbsp;&mdash; и&nbsp;создайте пространство, которое станет отражением вашего
-                            характера. Вдохновляйтесь вместе с&nbsp;нами.
+                            Рады представить галерею готовых работ OTTEES&nbsp;&mdash; здесь
+                            воплощены наши лучшие решения. Каждый проект отражает
+                            безупречную детализацию, гармонию форм и&nbsp;индивидуальный
+                            подход. Выбирайте свой идеал: от&nbsp;лаконичного минимализма
+                            до&nbsp;роскошной классики&nbsp;&mdash; и&nbsp;создайте
+                            пространство, которое станет отражением вашего характера.
+                            Вдохновляйтесь вместе с&nbsp;нами.
                         </p>
                     </div>
                 </div>
@@ -118,30 +175,33 @@
                         <div class="swiper-slide">
                             <div class="workflow-gallery__item">
                                 <img class="workflow-gallery__slide-image" src="./images/slide1.png" alt="" width="1920"
-                                    height="860" loading="lazy">
+                                    height="860" loading="lazy" />
                             </div>
                             <div class="workflow-gallery__desc container">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit maximus felis id.</p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    maximus felis id.
+                                </p>
                             </div>
-
                         </div>
 
                         <div class="swiper-slide">
                             <div class="workflow-gallery__item">
                                 <img class="workflow-gallery__slide-image" src="./images/bgk.png" alt="" width="1920"
-                                    height="860" loading="lazy">
+                                    height="860" loading="lazy" />
                             </div>
                             <div class="workflow-gallery__desc container">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit maximus felis id.</p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    maximus felis id.
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class=" container-nav container">
+                    <div class="container-nav container">
                         <div class="workflow-gallery__nav">
-                            <div class="icon icon--arrow-left">
-                            </div>
-                            <div class="icon icon--arrow-right">
-                            </div>
+                            <div class="icon icon--arrow-left"></div>
+                            <div class="icon icon--arrow-right"></div>
                         </div>
                     </div>
                 </div>
@@ -153,15 +213,15 @@
             <div class="steps-section__container container">
                 <h2 class="visually-hidden">Этапы работы</h2>
                 <div class="steps-section__marquee h1 marquee" aria-hidden="true">
-                    <span class="marquee-text icon icon--ellipse ">Этапы работы</span>
                     <span class="marquee-text icon icon--ellipse">Этапы работы</span>
-                    <span class="marquee-text icon icon--ellipse ">Этапы работы</span>
+                    <span class="marquee-text icon icon--ellipse">Этапы работы</span>
+                    <span class="marquee-text icon icon--ellipse">Этапы работы</span>
                     <span class="marquee-text icon icon--ellipse">Этапы работы</span>
                 </div>
                 <div class="steps-section__grid">
                     <div class="steps-section__left">
                         <div class="steps-section__image-wrapper">
-                            <img src="./images/1.jpg" alt="Описание изображения" class="steps-section__image">
+                            <img src="./images/1.jpg" alt="Описание изображения" class="steps-section__image" />
                         </div>
                     </div>
                     <div class="steps-section__right">
@@ -204,14 +264,14 @@
             </div>
         </section>
         <!--—END STEPS SECTION-->
-        <section class="contact-section">
+        <section class="contact-section" id="connection">
             <div class="contact-section__container container">
                 <div class="contact-section__grid">
                     <!-- Левая колонка с изображением (5 колонок) -->
                     <div class="contact-section__image-col">
                         <div class="contact-section__image-wrapper">
                             <img src="./images/forma.png" alt="Контактное изображение" class="contact-section__image"
-                                loading="lazy">
+                                loading="lazy" />
                         </div>
                     </div>
 
@@ -222,10 +282,12 @@
 
                             <!-- Табы -->
                             <div class="contact-form__tabs">
-                                <button type="button" class="contact-form__tab active" data-tab="client">Для
-                                    клиента</button>
-                                <button type="button" class="contact-form__tab" data-tab="partner">Для
-                                    партнеров</button>
+                                <button type="button" class="contact-form__tab active" data-tab="client">
+                                    Для клиента
+                                </button>
+                                <button type="button" class="contact-form__tab" data-tab="partner">
+                                    Для партнеров
+                                </button>
                             </div>
 
                             <!-- Контент табов -->
@@ -238,13 +300,13 @@
                                         <div class="contact-form__field">
                                             <label class="contact-form__label">Полное имя</label>
                                             <input type="text" class="contact-form__input"
-                                                placeholder="Введите ваше имя">
+                                                placeholder="Введите ваше имя" />
                                         </div>
 
                                         <div class="contact-form__field">
                                             <label class="contact-form__label">Email</label>
                                             <input type="email" class="contact-form__input"
-                                                placeholder="Введите ваш Email">
+                                                placeholder="Введите ваш Email" />
                                         </div>
 
                                         <div class="contact-form__field">
@@ -252,43 +314,48 @@
                                             <div class="contact-form__phone-input">
                                                 <span class="contact-form__phone-prefix">+2</span>
                                                 <input type="tel" class="contact-form__input"
-                                                    placeholder="Введите номер телефона">
+                                                    placeholder="Введите номер телефона" />
                                             </div>
                                         </div>
 
                                         <div class="contact-form__checkbox">
                                             <input type="checkbox" id="agreement-client"
-                                                class="contact-form__checkbox-input">
+                                                class="contact-form__checkbox-input" />
                                             <label for="agreement-client" class="contact-form__checkbox-label">
-                                                Я согласен с <a href="#" class="contact-form__link">Условиями</a>
+                                                Я согласен с
+                                                <a href="#" class="contact-form__link">Условиями</a>
                                             </label>
                                         </div>
 
-                                        <button type="submit" class="contact-form__submit">Отправить</button>
+                                        <button type="submit" class="contact-form__submit">
+                                            Отправить
+                                        </button>
                                     </form>
                                 </div>
 
                                 <!-- Таб для партнеров -->
                                 <div class="contact-form__pane" data-tab-content="partner">
-                                    <p class="contact-form__description">Форма для потенциальных партнеров</p>
+                                    <p class="contact-form__description">
+                                        Форма для потенциальных партнеров
+                                    </p>
 
                                     <form class="contact-form__form">
                                         <div class="contact-form__field">
                                             <label class="contact-form__label">Название компании</label>
                                             <input type="text" class="contact-form__input"
-                                                placeholder="Введите название компании">
+                                                placeholder="Введите название компании" />
                                         </div>
 
                                         <div class="contact-form__field">
                                             <label class="contact-form__label">Контактное лицо</label>
                                             <input type="text" class="contact-form__input"
-                                                placeholder="Введите ваше имя">
+                                                placeholder="Введите ваше имя" />
                                         </div>
 
                                         <div class="contact-form__field">
                                             <label class="contact-form__label">Email</label>
                                             <input type="email" class="contact-form__input"
-                                                placeholder="Введите ваш Email">
+                                                placeholder="Введите ваш Email" />
                                         </div>
 
                                         <div class="contact-form__field">
@@ -296,7 +363,7 @@
                                             <div class="contact-form__phone-input">
                                                 <span class="contact-form__phone-prefix">+2</span>
                                                 <input type="tel" class="contact-form__input"
-                                                    placeholder="Введите номер телефона">
+                                                    placeholder="Введите номер телефона" />
                                             </div>
                                         </div>
 
@@ -308,14 +375,16 @@
 
                                         <div class="contact-form__checkbox">
                                             <input type="checkbox" id="agreement-partner"
-                                                class="contact-form__checkbox-input">
+                                                class="contact-form__checkbox-input" />
                                             <label for="agreement-partner" class="contact-form__checkbox-label">
-                                                Я согласен с <a href="#" class="contact-form__link">Условиями
-                                                    партнерства</a>
+                                                Я согласен с
+                                                <a href="#" class="contact-form__link">Условиями партнерства</a>
                                             </label>
                                         </div>
 
-                                        <button type="submit" class="contact-form__submit">Отправить заявку</button>
+                                        <button type="submit" class="contact-form__submit">
+                                            Отправить заявку
+                                        </button>
                                     </form>
                                 </div>
                             </div>
@@ -332,16 +401,26 @@
             <div class="footer__top">
                 <div class="footer__logo-col">
                     <a href="/" class="footer__logo logo"><img src="./icons/logo.svg" alt="" class="logo__image"
-                            width="258" height="36"></a>
+                            width="258" height="36" /></a>
                 </div>
                 <div class="footer__nav-col">
                     <nav class="footer__nav">
                         <ul class="footer__nav-list">
-                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">Главная</a></li>
-                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">Продукт</a></li>
-                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">О нас</a></li>
-                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">Готовые работы</a></li>
-                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">Контакты</a></li>
+                            <li class="footer__nav-item">
+                                <a href="#" class="footer__nav-link">Главная</a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="#" class="footer__nav-link">Продукт</a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="#" class="footer__nav-link">О нас</a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="#" class="footer__nav-link">Готовые работы</a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="#" class="footer__nav-link">Контакты</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>

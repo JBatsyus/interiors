@@ -37,4 +37,14 @@ body.no-scroll {
         display: block !important;
     }
 }
-
+// скрыть элемент на ноуте
+.visible-laptop-s {
+    @include laptop-s {
+        display: none !important;
+    }
+}
+.visible-tablet {
+    @include tablet {
+        display: none !important;
+    }
+}

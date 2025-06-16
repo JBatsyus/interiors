@@ -28,6 +28,7 @@
 
     @include tablet {
         --container-padding-x: #{rem(32)};
+         --header-height: 100px;
 
     }
 
