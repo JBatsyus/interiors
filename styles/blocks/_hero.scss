@@ -59,6 +59,10 @@
             text-align: center;
             margin: 0 auto;
             max-width: 640px;
+
+            @include mobile {
+                max-width: 300px;
+            }
         }
     }
 }

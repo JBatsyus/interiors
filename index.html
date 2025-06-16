@@ -110,7 +110,7 @@
                         </div>
                     </div>
                     <div class="hero__footer">
-                        <span class="icon icon--down"> </span>
+                        <span class="icon icon--down visible-mobile"> </span>
                         <span class="h2">Мебель OTTEES — оттиск вашей индивидуальности в каждом
                             предмете</span>
                     </div>
@@ -265,17 +265,17 @@
         </section>
         <!--—END STEPS SECTION-->
         <section class="contact-section" id="connection">
-            <div class="contact-section__container container">
+            <div class="contact-section__container ">
                 <div class="contact-section__grid">
-                    <!-- Левая колонка с изображением (5 колонок) -->
+                    <!-- Левая колонка с изображением  -->
                     <div class="contact-section__image-col">
                         <div class="contact-section__image-wrapper">
                             <img src="./images/forma.png" alt="Контактное изображение" class="contact-section__image"
-                                loading="lazy" />
+                                width="960" height="1000" loading="lazy" />
                         </div>
                     </div>
 
-                    <!-- Правая колонка с формой (7 колонок) -->
+                    <!-- Правая колонка с формой -->
                     <div class="contact-section__form-col">
                         <div class="contact-form">
                             <h2 class="contact-form__title">Связаться с нами</h2>
@@ -294,7 +294,7 @@
                             <div class="contact-form__content">
                                 <!-- Таб для клиентов -->
                                 <div class="contact-form__pane active" data-tab-content="client">
-                                    <p class="contact-form__description">Дате критикуом</p>
+
 
                                     <form class="contact-form__form">
                                         <div class="contact-form__field">
@@ -306,29 +306,29 @@
                                         <div class="contact-form__field">
                                             <label class="contact-form__label">Email</label>
                                             <input type="email" class="contact-form__input"
-                                                placeholder="Введите ваш Email" />
+                                                placeholder="Введите ваш Email" autocomplete="on" />
                                         </div>
 
                                         <div class="contact-form__field">
                                             <label class="contact-form__label">Номер телефона</label>
-                                            <div class="contact-form__phone-input">
-                                                <span class="contact-form__phone-prefix">+2</span>
-                                                <input type="tel" class="contact-form__input"
-                                                    placeholder="Введите номер телефона" />
+                                            <div class="phone-input">
+                                                <input type="tel" class="contact-form__input phone-input input-phone"
+                                                    placeholder="Введите номер телефона" inputmode="numeric">
                                             </div>
                                         </div>
 
-                                        <div class="contact-form__checkbox">
+                                        <label for="agreement-client" class="contact-form__checkbox">
                                             <input type="checkbox" id="agreement-client"
                                                 class="contact-form__checkbox-input" />
-                                            <label for="agreement-client" class="contact-form__checkbox-label">
+                                            <span class="contact-form__checkbox-label">
                                                 Я согласен с
-                                                <a href="#" class="contact-form__link">Условиями</a>
-                                            </label>
-                                        </div>
+                                                <a href="#">Политикой и условиями</a>
+                                            </span>
+                                        </label>
 
-                                        <button type="submit" class="contact-form__submit">
-                                            Отправить
+                                        <button type="submit" class="contact-form__submit button">
+                                            <span>Отправить</span>
+                                            <span class="icon icon--arrow"> </span>
                                         </button>
                                     </form>
                                 </div>
@@ -383,7 +383,8 @@
                                         </div>
 
                                         <button type="submit" class="contact-form__submit">
-                                            Отправить заявку
+                                            <span>Отправить</span>
+                                            <span class="icon icon--arrow"> </span>
                                         </button>
                                     </form>
                                 </div>
@@ -442,6 +443,7 @@
     <!--—END  FOOTER -->
     <script src="./libs/plugins/swiper-bundle.min.js"></script>
     <script src="./libs/plugins/jquery.min.js"></script>
+    <script src="./libs/plugins/jquery.maskedinput.js"></script>
 </body>
 
 </html>
