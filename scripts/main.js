@@ -1,3 +1,13 @@
+const lenis = new Lenis({
+    autoRaf: true,
+    anchors: true,
+});
+
+// Listen for the scroll event and log the event data
+lenis.on('scroll', (e) => {
+    console.log(e);
+});
+
 var swiperWorkflowGallery = new Swiper(".workflow-gallery__swiper", {
     lazy: true,
     loop: true,
@@ -114,3 +124,85 @@ gsap.to(".pin-container", {
 
 // Установить общее количество изображений
 counterTotal.textContent = String(images.length).padStart(2, '0');
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Находим ВСЕ элементы с классом marquee
+const marquees = document.querySelectorAll('.marquee');
+const marqueeTweens = [];
+
+// Проверяем, есть ли элементы
+if (marquees.length === 0) {
+    console.warn('Элементы с классом .marquee не найдены');
+}
+
+// Инициализируем каждый marquee
+marquees.forEach((marquee, index) => {
+    // Дублируем контент для каждого
+    marquee.innerHTML += marquee.innerHTML;
+    
+    // Создаем анимацию для каждого элемента
+    const marqueeTween = gsap.to(marquee, {
+        xPercent: -50, // Половина, так как контент продублирован
+        ease: "none",
+        repeat: -1,
+        duration: 30,
+        paused: true
+    });
+    
+    // Устанавливаем начальную позицию в середине
+    marqueeTween.progress(0.5);
+    
+    // Сохраняем ссылку на анимацию
+    marqueeTweens.push(marqueeTween);
+    
+    // Запускаем анимацию
+    marqueeTween.play();
+    
+    console.log(`Marquee ${index + 1} инициализирован`);
+});
+
+let lastScroll = 0;
+
+function handleScroll() {
+    const currentScroll = window.scrollY;
+    
+    // Применяем изменение направления ко всем marquee
+    marqueeTweens.forEach((tween, index) => {
+        if (currentScroll > lastScroll) {
+            tween.timeScale(1); // влево
+        } else {
+            tween.timeScale(-1); // вправо
+        }
+    });
+    
+    lastScroll = currentScroll;
+}
+
+// Добавляем throttling для производительности
+let ticking = false;
+window.addEventListener("scroll", () => {
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            handleScroll();
+            ticking = false;
+        });
+        ticking = true;
+    }
+});
+
+// Дополнительная проверка: убеждаемся что все анимации активны
+function ensureAnimationsActive() {
+    marqueeTweens.forEach((tween, index) => {
+        if (tween.paused()) {
+            console.log(`Перезапуск анимации ${index + 1}`);
+            tween.play();
+        }
+    });
+}
+
+// Проверяем каждые 5 секунд
+setInterval(ensureAnimationsActive, 5000);
+
+console.log(`Инициализировано ${marqueeTweens.length} marquee анимаций`);

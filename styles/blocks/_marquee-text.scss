@@ -1,10 +1,16 @@
 @use "../helpers"as *;
 
 .marquee {
-    display: flex;
-    width: fit-content;
+    // display: flex;
+    // width: fit-content;
+    // will-change: transform;
+    // animation: marquee 40s linear infinite;
+   display: flex;
+    width: max-content;
+    overflow: hidden;
+    white-space: nowrap;
     will-change: transform;
-    animation: marquee 40s linear infinite;
+  
 
     @include tablet {
         margin-bottom: 120px;
@@ -23,12 +29,12 @@
     }
 }
 
-@keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
+// @keyframes marquee {
+//     0% {
+//         transform: translateX(0);
+//     }
 
-    100% {
-        transform: translateX(-50%);
-    }
-}
+//     100% {
+//         transform: translateX(-50%);
+//     }
+// }

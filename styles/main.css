@@ -646,9 +646,10 @@ a[class] {
 /*---------MOBILE MENU (END)--------*/
 .marquee {
   display: flex;
-  width: fit-content;
+  width: max-content;
+  overflow: hidden;
+  white-space: nowrap;
   will-change: transform;
-  animation: marquee 40s linear infinite;
 }
 @media (width <= 63.99875rem) {
   .marquee {
@@ -667,14 +668,6 @@ a[class] {
   flex-shrink: 0;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 .hero {
   position: relative;
   display: flex;
