@@ -1,0 +1,267 @@
+     <!-- BEGIN SECTION SCROLL -->
+        <div class="scroll-section">
+            <div class="pin-container">
+                <!-- Фиксированные элементы -->
+                <div class="container">
+                    <div class="fixed-controls ">
+                        <h2 class="fixed-controls__title">О наших продуктах</h2>
+                        <span class="icon icon--down "> </span>
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <!-- Блок изображений -->
+                <div class="pin-container__image-wrapper">
+                    <div class="image-wrapper__inner">
+                        <div class="image image--active" data-index="0">
+                            <picture>
+                                <source srcset="/images/slide2.png" type="image/webp">
+                                <img src="/images/slide2.png" alt="Image 1">
+                            </picture>
+                        </div>
+                        <div class="image" data-index="1">
+                            <picture>
+                                <source srcset="/images/slide2.png" type="image/webp">
+                                <img src="/images/slide2.png" alt="Image 2">
+                            </picture>
+                        </div>
+                        <div class="image" data-index="2">
+                            <picture>
+                                <source srcset="/images/slide2.png" type="image/webp">
+                                <img src="/images/slide2.png" alt="Image 3">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Инфоблок -->
+                <div class="pin-container__info-box info-box">
+
+                    <!-- Счетчик -->
+                    <div class="info-box__counter counter">
+                        <span class="counter__current">01</span>
+                        <span class="counter__separator">-</span>
+                        <span class="counter__total ">05</span>
+                    </div>
+
+                    <!-- Контент слайдов -->
+                    <div class="info-box__content info-content info-content--active" data-index="0">
+                        <div class="h3">КУХНИ</div>
+                        <div class="info-content__image">
+                            <img src="/images/slide2-1.png" alt="Thumb 1">
+                        </div>
+                        <p class="info-content__desc">Кухни OTTEES — безупречный симбиоз роскоши и повседневного
+                            комфорта. Это не просто мебель и
+                            место для приготовления пищи, а продуманное пространство, где эргономика встречается с
+                            искусством, а функциональность — с безупречным вкусом. Эксклюзивные материалы, авторские
+                            решения и инновационные технологии. Фасады, достойные статуса арт-объекта, и механизмы,
+                            работающие с точностью швейцарских часов. Кухни OTTEES — вдохновляйтесь каждым моментом.</p>
+                    </div>
+
+                    <div class="info-box__content info-content" data-index="1">
+                        <div class="h3">КУХНИ</div>
+                        <div class="info-content__image">
+                            <img src="/images/slide2-1.png" alt="Thumb 2">
+                        </div>
+                        <p class="info-content__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Laudantium dolorem non hic a animi
+                            dolor eligendi, veniam voluptatum inventore similique? Nisi, dignissimos hic? Laborum,
+                            exercitationem delectus architecto non facilis dignissimos.</p>
+                    </div>
+
+                    <div class="info-box__content info-content" data-index="2">
+                        <div class="h3">КУХНИ</div>
+                        <div class="info-content__image">
+                            <img src="/images/slide2-1.png" alt="Thumb 3">
+                        </div>
+                        <p class="info-content__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam
+                            accusamus molestias
+                            necessitatibus minima ducimus similique inventore id saepe animi soluta, quas officia. Illum
+                            itaque, accusamus ipsam vel accusantium et ad!</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- END SECTION SCROLL-->
+
+
+        <style>
+            @use "../helpers"as *;
+
+.scroll-section {
+    position: relative;
+}
+
+.pin-container .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fixed-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+
+    &__title {
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 1.15385;
+    }
+}
+
+.pin-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+
+    &__image-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__info-box {
+        position: absolute;
+        top: rem(100);
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--color-base);
+        padding: rem(125) 40px;
+        max-width: 32.81vw;
+        text-align: center;
+    }
+}
+
+.image-wrapper__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &--active {
+        opacity: 1;
+    }
+}
+
+.info-content {
+    display: none;
+
+    .h3 {
+        margin-bottom: 60px;
+        font-weight: 200;
+        font-size: 48px;
+        line-height: 1.04;
+    }
+
+    &--active {
+        display: block;
+    }
+
+    &__image {
+        margin-bottom: 60px;
+    }
+
+    &__desc {
+        font-family: var(--font-family-accent);
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 1.15;
+        text-align: center;
+    }
+}
+
+.counter {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 200;
+    font-size: 26px;
+    line-height: 1.15385;
+
+    text-align: center;
+
+    &__current {
+        color: var(--color-white);
+    }
+
+    &__separator {
+        margin-left: 10px;
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    &__total {
+        margin-left: 10px;
+        color: rgba(255, 255, 255, 0.55);
+    }
+}
+        </style>
+
+        
+gsap.registerPlugin(ScrollTrigger);
+
+const images = document.querySelectorAll('.image');
+const infoContents = document.querySelectorAll('.info-content');
+const counterCurrent = document.querySelector('.counter__current');
+const counterTotal = document.querySelector('.counter__total');
+
+let currentImageIndex = 0;
+
+// Пиним контейнер
+gsap.to(".pin-container", {
+    scrollTrigger: {
+        trigger: ".scroll-section",
+        start: "top top",
+        end: "+=100%",
+        scrub: true,
+        pin: true,
+        onUpdate: ({
+            progress
+        }) => {
+            const index = Math.min(images.length - 1, Math.floor(progress * images.length));
+
+            if (index !== currentImageIndex) {
+                // Скрыть текущее изображение и текст
+                images[currentImageIndex].classList.remove('image--active');
+                infoContents[currentImageIndex].classList.remove('info-content--active');
+
+                // Показать новое изображение и текст
+                images[index].classList.add('image--active');
+                infoContents[index].classList.add('info-content--active');
+
+                // Обновить счетчик
+                counterCurrent.textContent = String(index + 1).padStart(2, '0');
+
+                currentImageIndex = index;
+            }
+        }
+    },
+    duration: 1
+});
+
+// Установить общее количество изображений
+counterTotal.textContent = String(images.length).padStart(2, '0');
