@@ -67,6 +67,50 @@ document.querySelectorAll('.menu-mob a').forEach(link => {
 });
 
 /// mask
-	$(function () {
-		$(".input-phone").mask("+7 (999) 999 - 99 - 99");
-	});
+$(function () {
+    $(".input-phone").mask("+7 (999) 999 - 99 - 99");
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+const images = document.querySelectorAll('.image');
+const infoContents = document.querySelectorAll('.info-content');
+const counterCurrent = document.querySelector('.counter__current');
+const counterTotal = document.querySelector('.counter__total');
+
+let currentImageIndex = 0;
+
+// Пиним контейнер
+gsap.to(".pin-container", {
+    scrollTrigger: {
+        trigger: ".scroll-section",
+        start: "top top",
+        end: "+=100%",
+        scrub: true,
+        pin: true,
+        onUpdate: ({
+            progress
+        }) => {
+            const index = Math.min(images.length - 1, Math.floor(progress * images.length));
+
+            if (index !== currentImageIndex) {
+                // Скрыть текущее изображение и текст
+                images[currentImageIndex].classList.remove('image--active');
+                infoContents[currentImageIndex].classList.remove('info-content--active');
+
+                // Показать новое изображение и текст
+                images[index].classList.add('image--active');
+                infoContents[index].classList.add('info-content--active');
+
+                // Обновить счетчик
+                counterCurrent.textContent = String(index + 1).padStart(2, '0');
+
+                currentImageIndex = index;
+            }
+        }
+    },
+    duration: 1
+});
+
+// Установить общее количество изображений
+counterTotal.textContent = String(images.length).padStart(2, '0');

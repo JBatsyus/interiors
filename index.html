@@ -8,6 +8,8 @@
     <script src="./scripts/main.js" defer></script>
     <link rel="stylesheet" href="./styles/main.css" />
     <link rel="stylesheet" href="./libs/plugins/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
@@ -118,6 +120,96 @@
             </div>
         </section>
         <!--—END SECTION HERO-->
+
+        <!-- BEGIN SECTION SCROLL -->
+        <div class="scroll-section">
+            <div class="pin-container">
+                <!-- Фиксированные элементы -->
+                <div class="container">
+                    <div class="fixed-controls ">
+                        <h2 class="fixed-controls__title">О наших продуктах</h2>
+                        <span class="icon icon--down "> </span>
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <!-- Блок изображений -->
+                <div class="pin-container__image-wrapper">
+                    <div class="image-wrapper__inner">
+                        <div class="image image--active" data-index="0">
+                            <picture>
+                                <source srcset="/images/slide2.png" type="image/webp">
+                                <img src="/images/slide2.png" alt="Image 1">
+                            </picture>
+                        </div>
+                        <div class="image" data-index="1">
+                            <picture>
+                                <source srcset="/images/slide2.png" type="image/webp">
+                                <img src="/images/slide2.png" alt="Image 2">
+                            </picture>
+                        </div>
+                        <div class="image" data-index="2">
+                            <picture>
+                                <source srcset="/images/slide2.png" type="image/webp">
+                                <img src="/images/slide2.png" alt="Image 3">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Инфоблок -->
+                <div class="pin-container__info-box info-box">
+
+                    <!-- Счетчик -->
+                    <div class="info-box__counter counter">
+                        <span class="counter__current">01</span>
+                        <span class="counter__separator">-</span>
+                        <span class="counter__total ">05</span>
+                    </div>
+
+                    <!-- Контент слайдов -->
+                    <div class="info-box__content info-content info-content--active" data-index="0">
+                        <div class="h3">КУХНИ</div>
+                        <div class="info-content__image">
+                            <img src="/images/slide2-1.png" alt="Thumb 1">
+                        </div>
+                        <p class="info-content__desc">Кухни OTTEES — безупречный симбиоз роскоши и повседневного
+                            комфорта. Это не просто мебель и
+                            место для приготовления пищи, а продуманное пространство, где эргономика встречается с
+                            искусством, а функциональность — с безупречным вкусом. Эксклюзивные материалы, авторские
+                            решения и инновационные технологии. Фасады, достойные статуса арт-объекта, и механизмы,
+                            работающие с точностью швейцарских часов. Кухни OTTEES — вдохновляйтесь каждым моментом.</p>
+                    </div>
+
+                    <div class="info-box__content info-content" data-index="1">
+                        <div class="h3">КУХНИ</div>
+                        <div class="info-content__image">
+                            <img src="/images/slide2-1.png" alt="Thumb 2">
+                        </div>
+                        <p class="info-content__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Laudantium dolorem non hic a animi
+                            dolor eligendi, veniam voluptatum inventore similique? Nisi, dignissimos hic? Laborum,
+                            exercitationem delectus architecto non facilis dignissimos.</p>
+                    </div>
+
+                    <div class="info-box__content info-content" data-index="2">
+                        <div class="h3">КУХНИ</div>
+                        <div class="info-content__image">
+                            <img src="/images/slide2-1.png" alt="Thumb 3">
+                        </div>
+                        <p class="info-content__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam
+                            accusamus molestias
+                            necessitatibus minima ducimus similique inventore id saepe animi soluta, quas officia. Illum
+                            itaque, accusamus ipsam vel accusantium et ad!</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- END SECTION SCROLL-->
         <!--—BEGIN SECTION PHILOSOPHY-->
         <section class="text-section text-section--philosophy section" id="philosophy">
             <div class="text-section__container container">
