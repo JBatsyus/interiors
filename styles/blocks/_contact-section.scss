@@ -1,14 +1,24 @@
+@use "../helpers"as *;
+
 .contact-section {
     background-color: var(--color-white);
 
     &__grid {
         display: flex;
         align-items: stretch;
+
+        @include tablet {
+            flex-direction: column;
+        }
     }
 
     &__image-col {
         width: 50%;
         display: grid;
+
+        @include tablet {
+            width: 100%;
+        }
     }
 
     &__form-col {
@@ -16,6 +26,16 @@
         display: flex;
         justify-content: center;
         padding-block: 130px;
+
+        @include tablet {
+            width: 100%;
+            padding-block: 60px;
+            padding-inline: 16px;
+        }
+
+        @include mobile {
+            padding-block: 40px;
+        }
     }
 
     &__image-wrapper {
@@ -24,6 +44,14 @@
         display: grid;
         overflow: hidden;
         aspect-ratio: 1;
+
+        @include tablet {
+            height: 630px;
+        }
+
+        @include mobile {
+            height: 600px;
+        }
     }
 
     &__image {
@@ -35,8 +63,18 @@
 }
 
 .contact-form {
-    max-width: 560px;
+    max-width: 29.16vw;
+    min-width: 380px;
     width: 100%;
+
+    @include tablet {
+        min-width: 535px;
+    }
+
+    @include mobile {
+        max-width: 100%;
+        min-width: 100%;
+    }
 
     &__title {
         font-weight: 400;
@@ -44,6 +82,12 @@
         line-height: 1.04167;
         color: var(--color-gray);
         margin-bottom: 60px;
+
+        @include mobile {
+            font-weight: 400;
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
     }
 
     &__content {
@@ -61,6 +105,12 @@
         line-height: 1.11111;
         color: var(--color-gray);
         margin-bottom: 20px;
+
+        @include mobile {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.25;
+        }
     }
 
     &__input {
@@ -76,16 +126,10 @@
         transition: border-color 0.3s;
         outline: transparent;
 
-        // &:focus {
-        //     border-color: #c4a87e;
-        //     outline: none;
-        // }
+        @include mobile {
+            padding: 25px 20px;
+        }
     }
-
-
-
-
-
 
     &__checkbox {
         display: flex;
@@ -97,6 +141,10 @@
 
         &:hover {
             opacity: 0.9;
+        }
+
+        @include mobile {
+            margin: 40px 0;
         }
     }
 
@@ -145,6 +193,12 @@
         a {
             text-decoration: underline;
         }
+
+        @include mobile {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.25;
+        }
     }
 
     &__submit {
@@ -155,15 +209,27 @@
         display: flex;
         justify-content: space-between;
 
-        // &:hover {
-        //     background-color: darken(#c4a87e, 10%);
-        // }
+        @include mobile {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.25;
+        }
+
+        .icon::after {
+            @include mobile {
+                --size: 14px;
+            }
+        }
     }
 
     &__tabs {
         display: grid;
         grid-template-columns: 1fr 1fr;
         margin-bottom: 60px;
+
+        @include mobile {
+            margin-bottom: 40px;
+        }
     }
 
     &__tab {
@@ -177,6 +243,11 @@
         background: var(--color-light-gray-2);
         cursor: pointer;
         transition: all 0.2s;
+
+        @include mobile {
+            font-size: 16px;
+            line-height: 1.25;
+        }
 
         &.active {
             color: var(--color-white);
@@ -201,32 +272,5 @@
         min-height: 120px;
         resize: vertical;
         transition: border-color 0.3s;
-
-        &:focus {
-            border-color: #c4a87e;
-            outline: none;
-        }
     }
 }
-
-// @media (max-width: 992px) {
-//     .contact-section {
-//         &__grid {
-//             grid-template-columns: 1fr;
-//         }
-
-//         &__image-col,
-//         &__form-col {
-//             grid-column: 1;
-//         }
-
-//         &__image-wrapper {
-//             padding-bottom: 60%;
-//             /* Меньшая высота на мобильных */
-//         }
-//     }
-
-//     .contact-form {
-//         padding: 30px 20px;
-//     }
-// }

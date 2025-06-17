@@ -234,6 +234,7 @@ svg * {
   --container-width: 109.25rem;
   --container-padding-x: 1rem;
   --transition-duration: 0.4s;
+  --100vw: calc(100vw - var(--scrollbar-width));
   --header-height: 140px;
 }
 @media (width <= 90.06125rem) {
@@ -972,9 +973,19 @@ a[class] {
   display: flex;
   align-items: stretch;
 }
+@media (width <= 63.99875rem) {
+  .contact-section__grid {
+    flex-direction: column;
+  }
+}
 .contact-section__image-col {
   width: 50%;
   display: grid;
+}
+@media (width <= 63.99875rem) {
+  .contact-section__image-col {
+    width: 100%;
+  }
 }
 .contact-section__form-col {
   width: 50%;
@@ -982,12 +993,34 @@ a[class] {
   justify-content: center;
   padding-block: 130px;
 }
+@media (width <= 63.99875rem) {
+  .contact-section__form-col {
+    width: 100%;
+    padding-block: 60px;
+    padding-inline: 16px;
+  }
+}
+@media (width <= 47.99875rem) {
+  .contact-section__form-col {
+    padding-block: 40px;
+  }
+}
 .contact-section__image-wrapper {
   width: 100%;
   height: 100%;
   display: grid;
   overflow: hidden;
   aspect-ratio: 1;
+}
+@media (width <= 63.99875rem) {
+  .contact-section__image-wrapper {
+    height: 630px;
+  }
+}
+@media (width <= 47.99875rem) {
+  .contact-section__image-wrapper {
+    height: 600px;
+  }
 }
 .contact-section__image {
   width: 100%;
@@ -997,8 +1030,20 @@ a[class] {
 }
 
 .contact-form {
-  max-width: 560px;
+  max-width: 29.16vw;
+  min-width: 380px;
   width: 100%;
+}
+@media (width <= 63.99875rem) {
+  .contact-form {
+    min-width: 535px;
+  }
+}
+@media (width <= 47.99875rem) {
+  .contact-form {
+    max-width: 100%;
+    min-width: 100%;
+  }
 }
 .contact-form__title {
   font-weight: 400;
@@ -1006,6 +1051,13 @@ a[class] {
   line-height: 1.04167;
   color: var(--color-gray);
   margin-bottom: 60px;
+}
+@media (width <= 47.99875rem) {
+  .contact-form__title {
+    font-weight: 400;
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
 }
 .contact-form__content {
   font-family: var(--font-family-accent);
@@ -1021,6 +1073,13 @@ a[class] {
   color: var(--color-gray);
   margin-bottom: 20px;
 }
+@media (width <= 47.99875rem) {
+  .contact-form__label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
 .contact-form__input {
   width: 100%;
   padding: 25px 40px;
@@ -1033,6 +1092,11 @@ a[class] {
   transition: border-color 0.3s;
   outline: transparent;
 }
+@media (width <= 47.99875rem) {
+  .contact-form__input {
+    padding: 25px 20px;
+  }
+}
 .contact-form__checkbox {
   display: flex;
   align-items: center;
@@ -1043,6 +1107,11 @@ a[class] {
 }
 .contact-form__checkbox:hover {
   opacity: 0.9;
+}
+@media (width <= 47.99875rem) {
+  .contact-form__checkbox {
+    margin: 40px 0;
+  }
 }
 .contact-form__checkbox-input {
   appearance: none;
@@ -1085,6 +1154,13 @@ a[class] {
 .contact-form__checkbox-label a {
   text-decoration: underline;
 }
+@media (width <= 47.99875rem) {
+  .contact-form__checkbox-label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
 .contact-form__submit {
   background-color: var(--color-gray);
   color: var(--color-white);
@@ -1093,10 +1169,27 @@ a[class] {
   display: flex;
   justify-content: space-between;
 }
+@media (width <= 47.99875rem) {
+  .contact-form__submit {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+@media (width <= 47.99875rem) {
+  .contact-form__submit .icon::after {
+    --size: 14px;
+  }
+}
 .contact-form__tabs {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 60px;
+}
+@media (width <= 47.99875rem) {
+  .contact-form__tabs {
+    margin-bottom: 40px;
+  }
 }
 .contact-form__tab {
   padding-block: 23px;
@@ -1109,6 +1202,12 @@ a[class] {
   background: var(--color-light-gray-2);
   cursor: pointer;
   transition: all 0.2s;
+}
+@media (width <= 47.99875rem) {
+  .contact-form__tab {
+    font-size: 16px;
+    line-height: 1.25;
+  }
 }
 .contact-form__tab.active {
   color: var(--color-white);
@@ -1129,10 +1228,6 @@ a[class] {
   min-height: 120px;
   resize: vertical;
   transition: border-color 0.3s;
-}
-.contact-form__textarea:focus {
-  border-color: #c4a87e;
-  outline: none;
 }
 
 .footer {
