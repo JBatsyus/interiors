@@ -648,44 +648,15 @@ a[class] {
   display: flex;
   width: fit-content;
   will-change: transform;
-  animation: marquee-left 40s linear infinite;
+  white-space: nowrap;
 }
-.marquee.reverse {
-  animation: marquee-right 40s linear infinite;
-}
+
 .marquee-text {
   text-transform: uppercase;
-  white-space: nowrap;
   padding-right: 30px;
   flex-shrink: 0;
 }
-@media (width <= 63.99875rem) {
-  .marquee {
-    margin-bottom: 120px;
-  }
-}
-@media (width <= 47.99875rem) {
-  .marquee {
-    margin-bottom: 35px;
-  }
-}
 
-@keyframes marquee-left {
-  0% {
-    transform: translateX(-2%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-@keyframes marquee-right {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
 .hero {
   position: relative;
   display: flex;

@@ -1,30 +1,74 @@
 document.addEventListener('DOMContentLoaded', () => {
     const marquees = document.querySelectorAll('.marquee');
-    let lastScroll = window.scrollY;
+    if (!marquees.length) return;
+
+    let lastScrollTop = window.scrollY;
     let ticking = false;
 
+    // Для каждого .marquee создаём свой объект состояния
+    const marqueeInstances = [];
+
+    marquees.forEach(marquee => {
+        // Дублируем контент для бесконечности
+        marquee.innerHTML += marquee.innerHTML;
+
+        // Получаем ширину оригинального контента
+        const originalWidth = Array.from(marquee.children).slice(0, Math.floor(marquee.children.length / 2))
+            .reduce((acc, el) => acc + el.offsetWidth, 0);
+
+        marqueeInstances.push({
+            marquee,
+            speed: 1,
+            position: -originalWidth / 2, // Начинаем с середины
+            originalWidth
+        });
+
+        // Устанавливаем начальную позицию
+        marquee.style.transform = `translateX(${marqueeInstances[marqueeInstances.length - 1].position}px)`;
+    });
+
+    // Функция анимации
+    function animate() {
+        marqueeInstances.forEach(instance => {
+            const { marquee, originalWidth } = instance;
+
+            instance.position -= instance.speed;
+
+            // Бесконечность через дубликаты
+            if (Math.abs(instance.position) >= originalWidth) {
+                instance.position = 0;
+            }
+
+            marquee.style.transform = `translateX(${instance.position}px)`;
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    // Запуск анимации
+    animate();
+
+    // Обработчик скролла
     window.addEventListener('scroll', () => {
         if (!ticking) {
-            window.requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
                 const currentScroll = window.scrollY;
 
-                marquees.forEach(marquee => {
-                    if (currentScroll > lastScroll) {
-                        marquee.classList.remove('reverse'); // вниз = влево
-                    } else if (currentScroll < lastScroll) {
-                        marquee.classList.add('reverse'); // вверх = вправо
+                marqueeInstances.forEach(instance => {
+                    if (currentScroll > lastScrollTop) {
+                        instance.speed = Math.abs(instance.speed); // вниз → влево
+                    } else if (currentScroll < lastScrollTop) {
+                        instance.speed = -Math.abs(instance.speed); // вверх → вправо
                     }
                 });
 
-                lastScroll = currentScroll;
+                lastScrollTop = currentScroll;
                 ticking = false;
             });
-
             ticking = true;
         }
     });
 });
-
 
 
 const lenis = new Lenis({
