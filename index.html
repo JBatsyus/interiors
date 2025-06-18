@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home interiors</title>
     <script src="./scripts/main.js" defer></script>
-    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.4/dist/lenis.css">
-    <link rel="stylesheet" href="./libs/plugins/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./libs/plugins/swiper-bundle.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js"></script>
@@ -19,7 +19,7 @@
     <!--—BEGIN HEADER -->
     <header class="header container">
         <a class="header__logo logo" href="/" title="Home" aria-label="Home">
-            <img src="./icons/logo.svg" alt="" class="logo__image" width="258" height="36" />
+            <img src="./icons/logo.svg" alt="" class="logo__image" width="258" height="36">
         </a>
         <nav class="header__menu visible-tablet" aria-label="Основная">
             <ul class="header__menu-list">
@@ -103,7 +103,8 @@
     <main>
         <!--—BEGIN SECTION HERO-->
         <section class="hero" style="background-image: url('./images/bgk.png')" id="main">
-            <div class="hero__container container" >
+            <h1 class="visually-hidden">Home interiors</h1>
+            <div class="hero__container container">
                 <div class="hero__content">
                     <div class="hero__header">
                         <!-- Бегущая строка -->
@@ -165,8 +166,6 @@
                     <div class="fixed-controls ">
                         <h2 class="fixed-controls__title">О наших продуктах</h2>
                         <span class="icon icon--down "> </span>
-                        </button>
-
                     </div>
                 </div>
 
@@ -289,7 +288,7 @@
                         <div class="swiper-slide">
                             <div class="workflow-gallery__item">
                                 <img class="workflow-gallery__slide-image" src="./images/slide1.png" alt="" width="1920"
-                                    height="860" loading="lazy" />
+                                    height="860" loading="lazy">
                             </div>
                             <div class="workflow-gallery__desc container">
                                 <p>
@@ -302,7 +301,7 @@
                         <div class="swiper-slide">
                             <div class="workflow-gallery__item">
                                 <img class="workflow-gallery__slide-image" src="./images/bgk.png" alt="" width="1920"
-                                    height="860" loading="lazy" />
+                                    height="860" loading="lazy">
                             </div>
                             <div class="workflow-gallery__desc container">
                                 <p>
@@ -335,7 +334,7 @@
                 <div class="steps-section__grid">
                     <div class="steps-section__left">
                         <div class="steps-section__image-wrapper">
-                            <img src="./images/1.jpg" alt="Описание изображения" class="steps-section__image" />
+                            <img src="./images/1.jpg" alt="Описание изображения" class="steps-section__image">
                         </div>
                     </div>
                     <div class="steps-section__right">
@@ -385,7 +384,7 @@
                     <div class="contact-section__image-col">
                         <div class="contact-section__image-wrapper">
                             <img src="./images/forma.png" alt="Контактное изображение" class="contact-section__image"
-                                width="960" height="1000" loading="lazy" />
+                                width="960" height="1000" loading="lazy">
                         </div>
                     </div>
 
@@ -407,30 +406,30 @@
                                 <!-- Таб для клиентов -->
                                 <div class="contact-form__pane active" data-tab-content="client">
                                     <form class="contact-form__form" action="send.php" method="POST">
-                                        <input type="hidden" name="form_type" value="client" />
+                                        <input type="hidden" name="form_type" value="client">
 
                                         <div class="contact-form__field">
                                             <label for="client-name" class="contact-form__label">Полное имя</label>
                                             <input type="text" id="client-name" name="name" class="contact-form__input"
-                                                placeholder="Введите ваше имя" required />
+                                                placeholder="Введите ваше имя" required>
                                         </div>
 
                                         <div class="contact-form__field">
                                             <label for="client-email" class="contact-form__label">Email</label>
                                             <input type="email" id="client-email" name="email"
-                                                class="contact-form__input" placeholder="Введите ваш Email" required />
+                                                class="contact-form__input" placeholder="Введите ваш Email" required>
                                         </div>
 
                                         <div class="contact-form__field">
                                             <label for="client-phone" class="contact-form__label">Номер телефона</label>
                                             <input type="tel" id="client-phone" name="phone"
                                                 class="contact-form__input input-phone"
-                                                placeholder="Введите номер телефона" required />
+                                                placeholder="Введите номер телефона" required>
                                         </div>
 
                                         <label for="agreement-client" class="contact-form__checkbox">
                                             <input type="checkbox" id="agreement-client" name="agreement"
-                                                class="contact-form__checkbox-input" required />
+                                                class="contact-form__checkbox-input" required>
                                             <span class="contact-form__checkbox-label">
                                                 Я согласен с <a href="#">Политикой и условиями</a>
                                             </span>
@@ -446,27 +445,27 @@
                                 <!-- Таб для партнеров -->
                                 <div class="contact-form__pane" data-tab-content="partner">
                                     <form class="contact-form__form" action="send.php" method="POST">
-                                        <input type="hidden" name="form_type" value="partner" />
+                                        <input type="hidden" name="form_type" value="partner">
 
                                         <div class="contact-form__field">
                                             <label for="partner-company" class="contact-form__label">Название
                                                 компании</label>
                                             <input type="text" id="partner-company" name="company"
                                                 class="contact-form__input" placeholder="Введите название компании"
-                                                required />
+                                                required>
                                         </div>
 
                                         <div class="contact-form__field">
                                             <label for="partner-name" class="contact-form__label">Контактное
                                                 лицо</label>
                                             <input type="text" id="partner-name" name="name" class="contact-form__input"
-                                                placeholder="Введите ваше имя" required />
+                                                placeholder="Введите ваше имя" required>
                                         </div>
 
                                         <div class="contact-form__field">
                                             <label for="partner-email" class="contact-form__label">Email</label>
                                             <input type="email" id="partner-email" name="email"
-                                                class="contact-form__input" placeholder="Введите ваш Email" required />
+                                                class="contact-form__input" placeholder="Введите ваш Email" required>
                                         </div>
 
                                         <div class="contact-form__field">
@@ -474,7 +473,7 @@
                                                 телефона</label>
                                             <input type="tel" id="partner-phone" name="phone"
                                                 class="contact-form__input input-phone"
-                                                placeholder="Введите номер телефона" required />
+                                                placeholder="Введите номер телефона" required>
                                         </div>
 
                                         <div class="contact-form__field">
@@ -485,7 +484,7 @@
 
                                         <div class="contact-form__checkbox">
                                             <input type="checkbox" id="agreement-partner" name="agreement"
-                                                class="contact-form__checkbox-input" required />
+                                                class="contact-form__checkbox-input" required>
                                             <label for="agreement-partner" class="contact-form__checkbox-label">
                                                 Я согласен с <a href="#">Условиями партнерства</a>
                                             </label>
@@ -511,7 +510,7 @@
             <div class="footer__top">
                 <div class="footer__logo-col">
                     <a href="/" class="footer__logo logo"><img src="./icons/logo.svg" alt="" class="logo__image"
-                            width="258" height="36" /></a>
+                            width="258" height="36"></a>
                 </div>
                 <div class="footer__nav-col">
                     <nav class="footer__nav">
