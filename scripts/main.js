@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         removeAnchorFromUrl();
     });
 
-// Бегущая строка
+    // Бегущая строка
     const marquees = document.querySelectorAll('.marquee');
     if (!marquees.length) return;
 
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         instances.push({
             marquee,
-            speed: 1,
+            speed: 1.5,
             position: -originalWidth / 2,
             originalWidth
         });
