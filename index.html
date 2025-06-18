@@ -24,16 +24,16 @@
         <nav class="header__menu visible-tablet" aria-label="Основная">
             <ul class="header__menu-list">
                 <li class="header__menu-item">
-                    <a class="header__menu-link" href="#philosophy">О нас</a>
+                    <a class="header__menu-link link-hover" href="#philosophy">О нас</a>
                 </li>
                 <li class="header__menu-item">
-                    <a class="header__menu-link" href="#product">Продукт</a>
+                    <a class="header__menu-link link-hover" href="#product">Продукт</a>
                 </li>
                 <li class="header__menu-item">
-                    <a class="header__menu-link" href="#finished-works">Готовые работы</a>
+                    <a class="header__menu-link link-hover" href="#finished-works">Готовые работы</a>
                 </li>
                 <li class="header__menu-item">
-                    <a class="header__menu-link" href="#contacts">Контакты</a>
+                    <a class="header__menu-link link-hover" href="#contacts">Контакты</a>
                 </li>
             </ul>
         </nav>
@@ -389,112 +389,111 @@
                         </div>
                     </div>
 
-                    <!-- Правая колонка с формой -->
+                    <!-- Контейнер формы -->
                     <div class="contact-section__form-col">
                         <div class="contact-form">
-                            <h2 class="contact-form__title">Связаться с нами</h2>
+                            <h2 class="contact-form__title">Связаться с нами</h2>
 
                             <!-- Табы -->
                             <div class="contact-form__tabs">
-                                <button type="button" class="contact-form__tab active" data-tab="client">
-                                    Для клиента
-                                </button>
-                                <button type="button" class="contact-form__tab" data-tab="partner">
-                                    Для партнеров
-                                </button>
+                                <button type="button" class="contact-form__tab active" data-tab="client">Для
+                                    клиента</button>
+                                <button type="button" class="contact-form__tab" data-tab="partner">Для
+                                    партнеров</button>
                             </div>
 
                             <!-- Контент табов -->
                             <div class="contact-form__content">
                                 <!-- Таб для клиентов -->
                                 <div class="contact-form__pane active" data-tab-content="client">
+                                    <form class="contact-form__form" action="send.php" method="POST">
+                                        <input type="hidden" name="form_type" value="client" />
 
-
-                                    <form class="contact-form__form">
                                         <div class="contact-form__field">
-                                            <label class="contact-form__label">Полное имя</label>
-                                            <input type="text" class="contact-form__input"
-                                                placeholder="Введите ваше имя" />
+                                            <label for="client-name" class="contact-form__label">Полное имя</label>
+                                            <input type="text" id="client-name" name="name" class="contact-form__input"
+                                                placeholder="Введите ваше имя" required />
                                         </div>
 
                                         <div class="contact-form__field">
-                                            <label class="contact-form__label">Email</label>
-                                            <input type="email" class="contact-form__input"
-                                                placeholder="Введите ваш Email" autocomplete="on" />
+                                            <label for="client-email" class="contact-form__label">Email</label>
+                                            <input type="email" id="client-email" name="email"
+                                                class="contact-form__input" placeholder="Введите ваш Email" required />
                                         </div>
 
                                         <div class="contact-form__field">
-                                            <label class="contact-form__label">Номер телефона</label>
-                                            <div class="phone-input">
-                                                <input type="tel" class="contact-form__input phone-input input-phone"
-                                                    placeholder="Введите номер телефона" inputmode="numeric">
-                                            </div>
+                                            <label for="client-phone" class="contact-form__label">Номер телефона</label>
+                                            <input type="tel" id="client-phone" name="phone"
+                                                class="contact-form__input input-phone"
+                                                placeholder="Введите номер телефона" required />
                                         </div>
 
                                         <label for="agreement-client" class="contact-form__checkbox">
-                                            <input type="checkbox" id="agreement-client"
-                                                class="contact-form__checkbox-input" />
+                                            <input type="checkbox" id="agreement-client" name="agreement"
+                                                class="contact-form__checkbox-input" required />
                                             <span class="contact-form__checkbox-label">
-                                                Я согласен с
-                                                <a href="#">Политикой и условиями</a>
+                                                Я согласен с <a href="#">Политикой и условиями</a>
                                             </span>
                                         </label>
 
                                         <button type="submit" class="contact-form__submit button">
                                             <span>Отправить</span>
-                                            <span class="icon icon--arrow"> </span>
+                                            <span class="icon icon--arrow"></span>
                                         </button>
                                     </form>
                                 </div>
 
                                 <!-- Таб для партнеров -->
                                 <div class="contact-form__pane" data-tab-content="partner">
-                                    <form class="contact-form__form">
+                                    <form class="contact-form__form" action="send.php" method="POST">
+                                        <input type="hidden" name="form_type" value="partner" />
+
                                         <div class="contact-form__field">
-                                            <label class="contact-form__label">Название компании</label>
-                                            <input type="text" class="contact-form__input"
-                                                placeholder="Введите название компании" />
+                                            <label for="partner-company" class="contact-form__label">Название
+                                                компании</label>
+                                            <input type="text" id="partner-company" name="company"
+                                                class="contact-form__input" placeholder="Введите название компании"
+                                                required />
                                         </div>
 
                                         <div class="contact-form__field">
-                                            <label class="contact-form__label">Контактное лицо</label>
-                                            <input type="text" class="contact-form__input"
-                                                placeholder="Введите ваше имя" />
+                                            <label for="partner-name" class="contact-form__label">Контактное
+                                                лицо</label>
+                                            <input type="text" id="partner-name" name="name" class="contact-form__input"
+                                                placeholder="Введите ваше имя" required />
                                         </div>
 
                                         <div class="contact-form__field">
-                                            <label class="contact-form__label">Email</label>
-                                            <input type="email" class="contact-form__input"
-                                                placeholder="Введите ваш Email" />
+                                            <label for="partner-email" class="contact-form__label">Email</label>
+                                            <input type="email" id="partner-email" name="email"
+                                                class="contact-form__input" placeholder="Введите ваш Email" required />
                                         </div>
 
                                         <div class="contact-form__field">
-                                            <label class="contact-form__label">Номер телефона</label>
-                                            <div class="contact-form__phone-input">
-                                                <span class="contact-form__phone-prefix">+2</span>
-                                                <input type="tel" class="contact-form__input"
-                                                    placeholder="Введите номер телефона" />
-                                            </div>
+                                            <label for="partner-phone" class="contact-form__label">Номер
+                                                телефона</label>
+                                            <input type="tel" id="partner-phone" name="phone"
+                                                class="contact-form__input input-phone"
+                                                placeholder="Введите номер телефона" required />
                                         </div>
 
                                         <div class="contact-form__field">
-                                            <label class="contact-form__label">Сообщение</label>
-                                            <textarea class="contact-form__textarea"
-                                                placeholder="Опишите ваше предложение"></textarea>
+                                            <label for="partner-message" class="contact-form__label">Сообщение</label>
+                                            <textarea id="partner-message" name="message" class="contact-form__textarea"
+                                                placeholder="Опишите ваше предложение" required></textarea>
                                         </div>
 
                                         <div class="contact-form__checkbox">
-                                            <input type="checkbox" id="agreement-partner"
-                                                class="contact-form__checkbox-input" />
+                                            <input type="checkbox" id="agreement-partner" name="agreement"
+                                                class="contact-form__checkbox-input" required />
                                             <label for="agreement-partner" class="contact-form__checkbox-label">
-                                                Я согласен с
-                                                <a href="#" class="contact-form__link">Условиями партнерства</a>
+                                                Я согласен с <a href="#">Условиями партнерства</a>
                                             </label>
                                         </div>
 
-                                        <button type="submit" class="contact-form__submit">
+                                        <button type="submit" class="contact-form__submit button">
                                             <span>Отправить</span>
-                                            <span class="icon icon--arrow"> </span>
+                                            <span class="icon icon--arrow"></span>
                                         </button>
                                     </form>
                                 </div>
@@ -518,27 +517,27 @@
                     <nav class="footer__nav">
                         <ul class="footer__nav-list">
                             <li class="footer__nav-item">
-                                <a href="#" class="footer__nav-link">Главная</a>
+                                <a href="#" class="footer__nav-link link-hover">Главная</a>
                             </li>
                             <li class="footer__nav-item">
-                                <a href="#" class="footer__nav-link">Продукт</a>
+                                <a href="#" class="footer__nav-link link-hover">Продукт</a>
                             </li>
                             <li class="footer__nav-item">
-                                <a href="#" class="footer__nav-link">О нас</a>
+                                <a href="#" class="footer__nav-link link-hover">О нас</a>
                             </li>
                             <li class="footer__nav-item">
-                                <a href="#" class="footer__nav-link">Готовые работы</a>
+                                <a href="#" class="footer__nav-link link-hover">Готовые работы</a>
                             </li>
                             <li class="footer__nav-item">
-                                <a href="#" class="footer__nav-link">Контакты</a>
+                                <a href="#" class="footer__nav-link link-hover">Контакты</a>
                             </li>
                         </ul>
                     </nav>
                 </div>
                 <div class="footer__contacts-col">
                     <p class="footer__contacts-title visible-mobile">Контакты</p>
-                    <a href="mailto:info@ottees.ru" class="footer__contact-link">info@ottees.ru</a>
-                    <a href="tel:+79887161762" class="footer__contact-link">+7 988 716 17 62</a>
+                    <a href="mailto:info@ottees.ru" class="footer__contact-link link-hover">info@ottees.ru</a>
+                    <a href="tel:+79887161762" class="footer__contact-link link-hover">+7 988 716 17 62</a>
                 </div>
             </div>
 
@@ -554,6 +553,9 @@
     <script src="./libs/plugins/swiper-bundle.min.js"></script>
     <script src="./libs/plugins/jquery.min.js"></script>
     <script src="./libs/plugins/jquery.maskedinput.js"></script>
+    <script>
+
+    </script>
 
 </body>
 

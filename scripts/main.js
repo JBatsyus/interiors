@@ -77,8 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const lenis = new Lenis({
     autoRaf: true,
-    smooth: true,
-    smooth: true,
     direction: 'vertical',
     gestureDirection: 'vertical',
 });
