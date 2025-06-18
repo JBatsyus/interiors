@@ -445,16 +445,16 @@ a[class] {
   background-repeat: no-repeat;
 }
 .icon--arrow::after {
-  background-image: url("../../icons/arrow-top-right.svg");
+  background-image: url("./../icons/arrow-top-right.svg");
 }
 .icon--ellipse {
   column-gap: 30px;
 }
 .icon--ellipse::after {
-  background-image: url("../../icons/ellipse.svg");
+  background-image: url("./../icons/ellipse.svg");
 }
 .icon--down::after {
-  background-image: url("../../icons/arrow-down.svg");
+  background-image: url("./../icons/arrow-down.svg");
 }
 .icon--arrow-left {
   cursor: pointer;
@@ -462,7 +462,7 @@ a[class] {
 .icon--arrow-left::after {
   height: 64px;
   width: 32px;
-  background-image: url("../../icons/arrow-left.svg");
+  background-image: url("./../icons/arrow-left.svg");
 }
 @media (width <= 47.99875rem) {
   .icon--arrow-left::after {
@@ -476,7 +476,7 @@ a[class] {
 .icon--arrow-right::after {
   height: 64px;
   width: 32px;
-  background-image: url("../../icons/arrow-right.svg");
+  background-image: url("./../icons/arrow-right.svg");
 }
 @media (width <= 47.99875rem) {
   .icon--arrow-right::after {
