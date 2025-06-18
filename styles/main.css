@@ -646,10 +646,18 @@ a[class] {
 /*---------MOBILE MENU (END)--------*/
 .marquee {
   display: flex;
-  width: max-content;
-  overflow: hidden;
-  white-space: nowrap;
+  width: fit-content;
   will-change: transform;
+  animation: marquee-left 40s linear infinite;
+}
+.marquee.reverse {
+  animation: marquee-right 40s linear infinite;
+}
+.marquee-text {
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding-right: 30px;
+  flex-shrink: 0;
 }
 @media (width <= 63.99875rem) {
   .marquee {
@@ -661,13 +669,23 @@ a[class] {
     margin-bottom: 35px;
   }
 }
-.marquee-text {
-  text-transform: uppercase;
-  white-space: nowrap;
-  padding-right: 30px;
-  flex-shrink: 0;
-}
 
+@keyframes marquee-left {
+  0% {
+    transform: translateX(-2%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .hero {
   position: relative;
   display: flex;
