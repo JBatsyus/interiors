@@ -54,7 +54,7 @@
     .shape {
         fill: none;
         stroke: currentColor;
-        stroke-width: 1px;
+        stroke-width: 2px;
         stroke-dasharray: 760; // длина контура
         stroke-dashoffset: 760; // начинается за пределами видимой области
         transition: stroke-dashoffset 0.4s linear;

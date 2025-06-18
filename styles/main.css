@@ -531,7 +531,7 @@ a[class] {
 .button__border-animation .shape {
   fill: none;
   stroke: currentColor;
-  stroke-width: 1px;
+  stroke-width: 2px;
   stroke-dasharray: 760;
   stroke-dashoffset: 760;
   transition: stroke-dashoffset 0.4s linear;
