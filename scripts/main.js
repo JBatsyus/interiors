@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+
+    // Функция для удаления якоря из URL
+    function removeAnchorFromUrl() {
+        if (window.location.hash) {
+            // Удаляем якорь из URL
+            history.pushState({}, '', window.location.href.replace(/#.*$/, ''));
+        }
+    }
+
+    // Вызываем функцию при загрузке страницы, чтобы удалить якорь, если он есть
+    removeAnchorFromUrl();
+
+    // Обработчик события hashchange для удаления якоря при изменении хэша
+    window.addEventListener('hashchange', () => {
+        removeAnchorFromUrl();
+    });
+
+// Бегущая строка
     const marquees = document.querySelectorAll('.marquee');
     if (!marquees.length) return;
 
@@ -130,6 +149,9 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf);
+
+
+
 
 var swiperWorkflowGallery = new Swiper(".workflow-gallery__swiper", {
     lazy: true,
