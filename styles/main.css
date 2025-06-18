@@ -931,18 +931,36 @@ a[class] {
 .fixed-controls {
   position: absolute;
   top: 50%;
-  left: 0;
-  right: 0;
+  left: 16px;
+  right: 16px;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 100;
 }
+@media (width <= 90.06125rem) {
+  .fixed-controls {
+    top: 40px;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    transform: none;
+  }
+}
 .fixed-controls__title {
   font-weight: 400;
   font-size: 26px;
   line-height: 1.15385;
+}
+@media (width <= 47.99875rem) {
+  .fixed-controls__title {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
 }
 
 .pin-container {
@@ -963,12 +981,25 @@ a[class] {
 .pin-container__info-box {
   position: absolute;
   top: 6.25rem;
+  bottom: 6.25rem;
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--color-base);
-  padding: 7.8125rem 40px;
-  max-width: 32.81vw;
+  padding: 7.8125rem 40px 65px 40px;
+  max-width: max-content;
+  max-height: 920px;
   text-align: center;
+}
+@media (width <= 47.99875rem) {
+  .pin-container__info-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    min-width: 328px;
+    padding: 7.5rem 12px 60px 12px;
+  }
 }
 
 .image-wrapper__inner {
@@ -1011,18 +1042,36 @@ a[class] {
   font-size: 48px;
   line-height: 1.04;
 }
+@media (width <= 47.99875rem) {
+  .info-content .h3 {
+    margin-bottom: 40px;
+    font-size: 20px;
+    line-height: 1.1;
+  }
+}
 .info-content--active {
   display: block;
 }
 .info-content__image {
   margin-bottom: 60px;
 }
+@media (width <= 47.99875rem) {
+  .info-content__image {
+    margin-bottom: 40px;
+  }
+}
 .info-content__desc {
+  font-size: clamp(0.7777777778rem, 0.6239316239rem + 0.7692307692vw, 1.4444444444rem);
   font-family: var(--font-family-accent);
   font-weight: 400;
-  font-size: 26px;
   line-height: 1.15;
   text-align: center;
+  max-width: 550px;
+}
+@media (width <= 47.99875rem) {
+  .info-content__desc {
+    line-height: 1.14286;
+  }
 }
 
 .counter {
@@ -1034,6 +1083,12 @@ a[class] {
   font-size: 26px;
   line-height: 1.15385;
   text-align: center;
+}
+@media (width <= 47.99875rem) {
+  .counter {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
 }
 .counter__current {
   color: var(--color-white);
