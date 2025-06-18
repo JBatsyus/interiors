@@ -80,10 +80,9 @@
 //     }
 // }
 .marquee {
-    display: flex;
-    width: fit-content;
-    will-change: transform;
+    display: inline-flex;
     white-space: nowrap;
+    will-change: transform;
 }
 
 .marquee-text {

@@ -6,37 +6,40 @@ document.addEventListener('DOMContentLoaded', () => {
     let ticking = false;
 
     // Для каждого .marquee создаём свой объект состояния
-    const marqueeInstances = [];
+    const instances = [];
 
     marquees.forEach(marquee => {
-        // Дублируем контент для бесконечности
-        marquee.innerHTML += marquee.innerHTML;
+        // Клонируем содержимое дважды для бесконечности
+        marquee.innerHTML = marquee.innerHTML + marquee.innerHTML + marquee.innerHTML;
 
-        // Получаем ширину оригинального контента
-        const originalWidth = Array.from(marquee.children).slice(0, Math.floor(marquee.children.length / 2))
+        // Получаем ширину оригинального блока
+        const firstChild = marquee.children[0];
+        const originalWidth = Array.from(marquee.children).slice(0, Math.floor(marquee.children.length / 3))
             .reduce((acc, el) => acc + el.offsetWidth, 0);
 
-        marqueeInstances.push({
+        instances.push({
             marquee,
             speed: 1,
-            position: -originalWidth / 2, // Начинаем с середины
+            position: -originalWidth / 2,
             originalWidth
         });
 
         // Устанавливаем начальную позицию
-        marquee.style.transform = `translateX(${marqueeInstances[marqueeInstances.length - 1].position}px)`;
+        marquee.style.transform = `translateX(${instances[instances.length - 1].position}px)`;
     });
 
-    // Функция анимации
     function animate() {
-        marqueeInstances.forEach(instance => {
+        instances.forEach(instance => {
             const { marquee, originalWidth } = instance;
 
             instance.position -= instance.speed;
 
-            // Бесконечность через дубликаты
-            if (Math.abs(instance.position) >= originalWidth) {
-                instance.position = 0;
+            // Зацикливание через модуль
+            instance.position %= originalWidth;
+
+            // Чтобы не было разрыва между дубликатами
+            if (instance.position > 0) {
+                instance.position -= originalWidth;
             }
 
             marquee.style.transform = `translateX(${instance.position}px)`;
@@ -45,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animate);
     }
 
-    // Запуск анимации
     animate();
 
     // Обработчик скролла
@@ -54,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             requestAnimationFrame(() => {
                 const currentScroll = window.scrollY;
 
-                marqueeInstances.forEach(instance => {
+                instances.forEach(instance => {
                     if (currentScroll > lastScrollTop) {
                         instance.speed = Math.abs(instance.speed); // вниз → влево
                     } else if (currentScroll < lastScrollTop) {
@@ -69,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
 
 const lenis = new Lenis({
