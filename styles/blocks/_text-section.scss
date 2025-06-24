@@ -31,18 +31,19 @@
 
     &__paragraph {
         &--lead {
-            @include fluid-text(48, 20);
+            font-size: 40px;
             font-weight: 400;
             line-height: 1.04;
             margin-bottom: 55px;
 
             @include mobile {
+                font-size: 20px;
                 line-height: 1.1;
             }
         }
 
         &--desc {
-            @include fluid-text(26, 14);
+            font-size: 20px;
             font-family: var(--font-family-accent);
             font-weight: 400;
             line-height: 1.15385;
@@ -50,6 +51,7 @@
             max-width: 530px;
 
             @include mobile {
+                font-size: 14px;
                 line-height: 1.14;
             }
         }
