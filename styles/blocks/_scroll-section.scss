@@ -38,7 +38,6 @@
         background-color: var(--color-base);
         padding: 40px;
         column-gap: 40px;
-        // width: max-content;
         text-align: center;
 
         @include mobile {
@@ -96,6 +95,10 @@
         position: relative;
 
         @include tablet {
+            width: 350px;
+        }
+
+        @include mobile {
             width: 100%;
         }
     }
@@ -121,10 +124,12 @@
 
     &--active {
         display: flex;
-        align-items: center;
         column-gap: 40px;
 
-        @include tablet {
+        @include tablet {}
+
+        @include mobile {
+            align-items: center;
             flex-direction: column;
         }
     }
@@ -132,6 +137,10 @@
     &__image {
         height: 400px;
         width: 600px;
+
+        @include tablet {
+            width: 350px;
+        }
 
         @include mobile {
             height: 230px;
@@ -155,11 +164,14 @@
 
         min-height: 200px;
 
-        @include mobile {
+        @include tablet {
             font-size: 14px;
+        }
+
+        @include mobile {
             line-height: 1.14286;
             max-width: 600px;
-            min-height:180px;
+            min-height: 160px;
         }
     }
 }
@@ -174,12 +186,13 @@
     text-align: center;
 
     @include tablet {
-        left:50%;
-        transform: translateX(-50%);
-        top: 50%;
+        left: calc(50% + 146px);
     }
 
     @include mobile {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50%;
         line-height: 1.14286;
     }
 
