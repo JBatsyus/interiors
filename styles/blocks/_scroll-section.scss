@@ -46,7 +46,7 @@
             left: 50%;
             bottom: auto;
             transform: translate(-50%, -50%);
-            min-width: 328px;
+            width: 91%;
             padding: 65px 12px;
         }
     }
@@ -99,6 +99,7 @@
         }
 
         @include mobile {
+            padding-top: 76px;
             width: 100%;
         }
     }
@@ -171,7 +172,7 @@
         @include mobile {
             line-height: 1.14286;
             max-width: 600px;
-            min-height: 160px;
+            min-height: 210px;
         }
     }
 }
@@ -192,7 +193,7 @@
     @include mobile {
         left: 50%;
         transform: translateX(-50%);
-        top: 50%;
+        top: 45%;
         line-height: 1.14286;
     }
 
