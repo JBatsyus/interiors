@@ -1,8 +1,8 @@
 @use "../helpers"as *;
 
 .footer {
-    padding-top: 200px;
-    padding-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 
     @include mobile {
         padding-top: 40px;
@@ -55,7 +55,7 @@
     }
 
     &__contacts-col {
-        @include fluid-text(26, 20);
+        font-size: 20px;
         grid-column: span 3;
         font-weight: 400;
         white-space: nowrap;
@@ -95,7 +95,7 @@
     }
 
     &__nav-link {
-        @include fluid-text(48, 20);
+        font-size: 20px;
         text-decoration: none;
         font-weight: 400;
 
@@ -125,7 +125,7 @@
     &__copyright,
     &__legal-link {
         font-weight: 400;
-        font-size: 26px;
+        font-size: 20px;
         line-height: 1.15385;
 
         @include mobile {

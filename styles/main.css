@@ -1453,8 +1453,8 @@ a[class] {
 }
 
 .footer {
-  padding-top: 200px;
-  padding-bottom: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   /* Стили нижней части */
 }
 @media (width <= 47.99875rem) {
@@ -1512,7 +1512,7 @@ a[class] {
   }
 }
 .footer__contacts-col {
-  font-size: clamp(1.1111111111rem, 1.0341880342rem + 0.3846153846vw, 1.4444444444rem);
+  font-size: 20px;
   grid-column: span 3;
   font-weight: 400;
   white-space: nowrap;
@@ -1552,7 +1552,7 @@ a[class] {
   gap: 60px;
 }
 .footer__nav-link {
-  font-size: clamp(1.1111111111rem, 0.7521367521rem + 1.7948717949vw, 2.6666666667rem);
+  font-size: 20px;
   text-decoration: none;
   font-weight: 400;
   line-height: 1.04167;
@@ -1576,7 +1576,7 @@ a[class] {
 }
 .footer__copyright, .footer__legal-link {
   font-weight: 400;
-  font-size: 26px;
+  font-size: 20px;
   line-height: 1.15385;
 }
 @media (width <= 47.99875rem) {
