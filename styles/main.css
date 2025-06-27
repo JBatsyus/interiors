@@ -1226,7 +1226,7 @@ a[class] {
   width: 50%;
   display: flex;
   justify-content: center;
-  padding-block: 60px;
+  padding-block: 40px;
 }
 @media (width <= 63.99875rem) {
   .contact-section__form-col {
@@ -1338,7 +1338,7 @@ a[class] {
 .contact-form__checkbox {
   display: flex;
   align-items: center;
-  margin: 40px 0;
+  margin: 20px 0;
   cursor: pointer;
   user-select: none;
   transition: opacity 0.3s ease;
@@ -1423,7 +1423,7 @@ a[class] {
 .contact-form__tabs {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 @media (width <= 47.99875rem) {
   .contact-form__tabs {

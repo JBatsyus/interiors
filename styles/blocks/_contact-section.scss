@@ -25,7 +25,8 @@
         width: 50%;
         display: flex;
         justify-content: center;
-        padding-block: 60px;
+        // padding-block: 60px;
+        padding-block: 40px;
 
         @include tablet {
             width: 100%;
@@ -137,7 +138,8 @@
     &__checkbox {
         display: flex;
         align-items: center;
-        margin: 40px 0;
+        // margin: 40px 0;
+         margin: 20px 0;
         cursor: pointer;
         user-select: none;
         transition: opacity 0.3s ease;
@@ -229,7 +231,8 @@
     &__tabs {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        margin-bottom: 40px;
+        // margin-bottom: 40px;
+         margin-bottom: 20px;
 
         @include mobile {
             margin-bottom: 20px;
