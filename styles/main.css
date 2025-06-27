@@ -1569,6 +1569,11 @@ a[class] {
   flex-direction: column;
   gap: 40px;
 }
+@media (width <= 47.99875rem) {
+  .footer__nav-list {
+    row-gap: 20px;
+  }
+}
 .footer__nav-link {
   font-size: 20px;
   text-decoration: none;
