@@ -94,11 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// const lenis = new Lenis({
-//     autoRaf: true,
-//     direction: 'vertical',
-//     gestureDirection: 'vertical',
-// });
+const lenis = new Lenis({
+    autoRaf: true,
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+});
 
 // Функция для обновления состояния Lenis
 // function updateLenis() {
