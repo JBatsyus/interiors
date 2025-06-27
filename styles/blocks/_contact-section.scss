@@ -25,11 +25,11 @@
         width: 50%;
         display: flex;
         justify-content: center;
-        padding-block: 100px;
+        padding-block: 60px;
 
         @include tablet {
             width: 100%;
-            padding-block: 60px;
+            // padding-block: 60px;
             padding-inline: 16px;
         }
 

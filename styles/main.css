@@ -1226,12 +1226,11 @@ a[class] {
   width: 50%;
   display: flex;
   justify-content: center;
-  padding-block: 100px;
+  padding-block: 60px;
 }
 @media (width <= 63.99875rem) {
   .contact-section__form-col {
     width: 100%;
-    padding-block: 60px;
     padding-inline: 16px;
   }
 }
