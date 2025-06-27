@@ -34,22 +34,25 @@
         }
 
         @include mobile {
-            padding-block: 40px;
+            padding-block: 20px;
         }
     }
 
     &__image-wrapper {
         width: 100%;
         height: 100%;
-        display: grid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         overflow: hidden;
 
         @include tablet {
-            height: 630px;
+            aspect-ratio: 8/5;
         }
 
         @include mobile {
-            height: 600px;
+            height: auto;
+            aspect-ratio: 9/10;
         }
     }
 
@@ -83,6 +86,10 @@
         line-height: 1.04167;
         color: var(--color-gray);
         margin-bottom: 40px;
+
+        @include mobile {
+            margin-bottom: 20px;
+        }
     }
 
     &__content {
@@ -122,7 +129,8 @@
         outline: transparent;
 
         @include mobile {
-            padding: 25px 20px;
+            padding: 15px 20px;
+            height: 40px;
         }
     }
 
@@ -139,7 +147,7 @@
         }
 
         @include mobile {
-            margin: 40px 0;
+            margin: 20px 0;
         }
     }
 
@@ -205,8 +213,10 @@
         justify-content: space-between;
 
         @include mobile {
+            padding-top: 15px;
+            padding-bottom: 15px;
             font-weight: 400;
-            line-height: 1.25;
+            line-height: 0;
         }
 
         .icon::after {
@@ -222,7 +232,7 @@
         margin-bottom: 40px;
 
         @include mobile {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
     }
 
@@ -239,7 +249,9 @@
         transition: all 0.2s;
 
         @include mobile {
-            line-height: 1.25;
+            padding-block: 15px;
+            font-size: 14px;
+            line-height: 0.8;
         }
 
         &.active {

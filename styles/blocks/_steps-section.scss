@@ -36,7 +36,7 @@
         overflow: hidden;
 
         @include mobile {
-            max-height: 390px;
+            max-height: 235px;
         }
     }
 
@@ -83,7 +83,7 @@
         @include mobile {
             justify-content: space-between;
             text-align: end;
-            padding-block: 40px;
+            padding-block: 14px;
         }
     }
 
@@ -94,7 +94,7 @@
         margin-right: fluid(270, 77);
 
         @include mobile {
-            line-height: 1.1;
+            line-height: 1;
             margin-right: 20px;
         }
     }
@@ -105,8 +105,8 @@
         line-height: 0.9;
 
         @include mobile {
-            font-size: 14px;
-            line-height: 1.14;
+            font-size: 16px;
+            line-height: 1;
         }
     }
 }
