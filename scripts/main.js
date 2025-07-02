@@ -94,20 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// const lenis = new Lenis({
-//     autoRaf: true,
-//     direction: 'vertical',
-//     gestureDirection: 'vertical',
-// });
 
-// Функция для обновления состояния Lenis
-// function updateLenis() {
-//     if (document.body.classList.contains('no-scroll')) {
-//         lenis.stop(); // Останавливаем Lenis
-//     } else {
-//         lenis.start(); // Возобновляем Lenis
-//     }
-// }
 
 const menuHumb = document.querySelector('.menu-humb');
 const menuMob = document.querySelector('.menu-mob');
@@ -119,7 +106,7 @@ menuHumb.addEventListener('click', function (e) {
     this.classList.toggle('active');
     menuMob.classList.toggle('active');
     document.body.classList.toggle('no-scroll');
-    // updateLenis(); // Обновляем состояние Lenis
+    
 });
 
 // Закрытие меню при клике вне его
@@ -128,7 +115,7 @@ document.addEventListener('click', function (e) {
         menuHumb.classList.remove('active');
         menuMob.classList.remove('active');
         document.body.classList.remove('no-scroll');
-        // updateLenis(); // Обновляем состояние Lenis
+        
     }
 });
 
@@ -138,17 +125,11 @@ document.querySelectorAll('.menu-mob a').forEach(link => {
         menuHumb.classList.remove('active');
         menuMob.classList.remove('active');
         document.body.classList.remove('no-scroll');
-        // updateLenis(); // Обновляем состояние Lenis
+       
     });
 });
 
-// Инициализация Lenis
-// function raf(time) {
-//     lenis.raf(time);
-//     requestAnimationFrame(raf);
-// }
 
-// requestAnimationFrame(raf);
 
 
 
@@ -157,17 +138,36 @@ var swiperWorkflowGallery = new Swiper(".workflow-gallery__swiper", {
     lazy: true,
     loop: true,
     effect: "fade",
-    autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: false,
-    },
+    // autoplay: {
+    //     delay: 2000,
+    //     disableOnInteraction: false,
+    //     pauseOnMouseEnter: false,
+    // },
     navigation: {
         nextEl: ".icon--arrow-right",
         prevEl: ".icon--arrow-left",
     },
 
 });
+ // Инициализация Fancybox
+        Fancybox.bind("[data-fancybox]", {
+            Thumbs: {
+                type: "classic",
+            },
+            Toolbar: {
+                display: {
+                    left: ["infobar"],
+                    middle: ["zoomIn", "zoomOut", "toggle1to1", "rotateCCW", "rotateCW"],
+                    right: ["slideshow", "thumbs", "close"],
+                },
+            },
+            Images: {
+                zoom: true,
+            },
+            caption: (fancybox, slide) => {
+                return slide.caption || '';
+            }
+        });
 
 document.querySelectorAll('.contact-form__tab').forEach(tab => {
     tab.addEventListener('click', () => {

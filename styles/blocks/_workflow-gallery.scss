@@ -1,6 +1,16 @@
 @use "../helpers"as *;
 
 .workflow-gallery {
+    background-color: var(--color-white);
+
+    @include tablet {
+        padding-block: 60px;
+    }
+
+    @include mobile {
+        padding-block: 40px;
+    }
+
     &__wrap {
         width: 100%;
     }
@@ -9,51 +19,135 @@
         position: relative;
     }
 
-    &__item {
-        aspect-ratio: 12 / 5;
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: 324px 324px;
+        align-content: center;
+        gap: 32px;
+        // aspect-ratio: 12 / 5;
         height: 100vh;
         width: 100%;
 
         @include tablet {
             height: auto;
-            aspect-ratio: 48 / 35;
+            display: flex;
+            flex-wrap: wrap;
         }
 
         @include mobile {
-            aspect-ratio: 1 /2;
-            max-height: 400px;
+            justify-content: center;
+
+        }
+
+
+        .workflow-gallery__item:nth-child(1) {
+            grid-column: 1 / span 2;
+            grid-row: 1 / 1;
+
+        }
+
+        .workflow-gallery__item:nth-child(2) {
+            grid-column: 3 / span 2;
+            grid-row: 1 / 3;
+
+
+        }
+
+        .workflow-gallery__item:nth-child(3) {
+            grid-column: 5 / span 2;
+            grid-row: 1 / 1;
+
+        }
+
+        .workflow-gallery__item:nth-child(4) {
+            grid-column: 7 / span 2;
+            grid-row: 1 / 1;
+
+
+        }
+
+        .workflow-gallery__item:nth-child(5) {
+            grid-column: 9 / span 2;
+            grid-row: 1 / 1;
+
+
+        }
+
+        .workflow-gallery__item:nth-child(6) {
+            grid-column: 1 / span 2;
+            grid-row: 2/ 2;
+
+
+        }
+
+        .workflow-gallery__item:nth-child(7) {
+
+            grid-column: 5 / span 4;
+            grid-row: 2/ 2;
+
+
         }
     }
 
+    &__item {
+        position: relative;
+        display: grid;
+        cursor: pointer;
+
+        @include tablet {
+            width: 30%;
+            // min-width: 280px;
+            // height: 280px;
+            aspect-ratio: 1;
+            overflow: hidden;
+        }
+
+        @include mobile {
+            width: auto;
+            // min-width: 280px;
+            height: 324px;
+            aspect-ratio: 1;
+
+        }
+
+    }
+
     &__slide-image {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
     &__desc {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 80px;
+        bottom: 20px;
         box-sizing: border-box;
 
-        @include mobile {
-            bottom: 40px;
+
+
+        h4 {
+            margin-bottom: 10px;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 1.5;
+
+            @include tablet {
+                font-size: 20px;
+                line-height: 1.2963;
+            }
         }
 
         p {
-            @include fluid-text(48, 20);
+            word-break: break-all;
+            font-family: var(--font-family-accent);
             font-weight: 400;
-
-            line-height: 1.04167;
-            width: 100%;
-            max-width: 1219px;
-
-            @include mobile {
-                line-height: 1.1;
-            }
+            font-size: 16px;
         }
     }
 
@@ -73,4 +167,9 @@
         width: 100%;
         justify-content: space-between;
     }
+}
+
+/* Скрытые элементы Fancybox */
+.fancybox-source {
+    display: none;
 }
