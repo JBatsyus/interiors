@@ -913,6 +913,7 @@ a[class] {
   font-weight: 200;
   line-height: 0.9;
   margin-right: clamp(4.2777777778rem, 1.8034188034rem + 12.3717948718vw, 15rem);
+  width: 30px;
 }
 @media (width <= 47.99875rem) {
   .steps-list__number {

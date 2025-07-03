@@ -92,6 +92,7 @@
         font-weight: 200;
         line-height: 0.9;
         margin-right: fluid(270, 77);
+        width: 30px;
 
         @include mobile {
             line-height: 1;
