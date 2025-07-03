@@ -144,8 +144,8 @@ var swiperWorkflowGallery = new Swiper(".workflow-gallery__swiper", {
     //     pauseOnMouseEnter: false,
     // },
     navigation: {
-        nextEl: ".icon--arrow-right",
-        prevEl: ".icon--arrow-left",
+        nextEl: ".workflow-gallery__nav",
+        // prevEl: ".icon--arrow-left",
     },
 
 });
