@@ -178,10 +178,12 @@ var swiperWorkflowGallery = new Swiper(".workflow-gallery__swiper", {
     },
 
 });
+
+
 // Инициализация Fancybox
 Fancybox.bind("[data-fancybox]", {
     Thumbs: {
-        type: "classic",
+        type: "classic"
     },
     Toolbar: {
         display: {
@@ -191,11 +193,12 @@ Fancybox.bind("[data-fancybox]", {
         },
     },
     Images: {
-        zoom: true,
+        zoom: true
     },
-    caption: (fancybox, slide) => {
-        return slide.caption || '';
-    }
+    hideScrollbar: false, // Не скрывать скроллбар
+    autoFocus: false, // Отключить автофокус
+    dragToClose: false, // Отключить закрытие при скролле
+
 });
 
 document.querySelectorAll('.contact-form__tab').forEach(tab => {
@@ -267,3 +270,47 @@ gsap.to(".pin-container", {
 
 // Установить общее количество изображений
 counterTotal.textContent = String(images.length).padStart(2, '0');
+
+function adjustMobileGridRows() {
+    if (!window.matchMedia('(max-width: 767px)').matches) return;
+
+    document.querySelectorAll('.swiper-slide').forEach(slide => {
+        const list = slide.querySelector('.workflow-gallery__list');
+        if (!list) return;
+
+        // Считаем только реальные элементы (не шаблонные)
+        const items = Array.from(list.children).filter(item =>
+            !item.classList.contains('workflow-gallery__item--template') &&
+            item.classList.contains('workflow-gallery__item')
+        );
+
+        // Количество строк = количество элементов + 1 (для кнопки)
+        const rowsNeeded = items.length + 1;
+
+        // Устанавливаем нужное количество строк
+        list.style.gridTemplateRows = `repeat(${rowsNeeded}, 324px)`;
+
+        // Позиционируем кнопку в последней строке
+        const nav = slide.querySelector('.workflow-gallery__nav');
+        if (nav) {
+            nav.style.gridRow = rowsNeeded;
+        }
+    });
+}
+
+// Инициализация при загрузке
+document.addEventListener('DOMContentLoaded', () => {
+    adjustMobileGridRows();
+
+    // Для Swiper
+    const swiper = new Swiper(".workflow-gallery__swiper", {
+        // ... ваши текущие настройки ...
+        on: {
+            init: adjustMobileGridRows,
+            slideChange: adjustMobileGridRows
+        }
+    });
+});
+
+// Реакция на изменение размера окна
+window.addEventListener('resize', adjustMobileGridRows);

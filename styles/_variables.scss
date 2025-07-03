@@ -21,6 +21,8 @@
     --100vw: calc(100vw - var(--scrollbar-width));
     --header-height: 140px;
 
+    
+
     // контейнер на лэптопе
     @include laptop {
         --container-width: #{rem(1280)};
@@ -36,3 +38,5 @@
         --container-padding-x: #{rem(16)};
     }
 }
+
+
