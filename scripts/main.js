@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-
     // Функция для удаления якоря из URL
     function removeAnchorFromUrl() {
         if (window.location.hash) {
@@ -92,6 +91,37 @@ document.addEventListener('DOMContentLoaded', () => {
             ticking = true;
         }
     });
+
+
+
+    // Скролл к началу блока (блок слайдеров готовых работ - на мобилке прокрутка к началу блока)
+    const checkMobile = () => window.matchMedia('(max-width: 768px)').matches;
+
+    // Обработчик клика
+    const handleNavClick = function (e) {
+        if (!checkMobile()) return;
+
+        e.preventDefault();
+        $('.workflow-gallery__swiper').first()[0].scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    };
+
+    // Инициализация
+    $('.workflow-gallery__nav').on('click', handleNavClick);
+
+    // Оптимизированная обработка ресайза
+    let resizeTimer;
+    $(window).on('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            $('.workflow-gallery__nav').off('click').on('click', handleNavClick);
+        }, 250);
+    });
+
+
+
 });
 
 
@@ -106,7 +136,7 @@ menuHumb.addEventListener('click', function (e) {
     this.classList.toggle('active');
     menuMob.classList.toggle('active');
     document.body.classList.toggle('no-scroll');
-    
+
 });
 
 // Закрытие меню при клике вне его
@@ -115,7 +145,7 @@ document.addEventListener('click', function (e) {
         menuHumb.classList.remove('active');
         menuMob.classList.remove('active');
         document.body.classList.remove('no-scroll');
-        
+
     }
 });
 
@@ -125,7 +155,7 @@ document.querySelectorAll('.menu-mob a').forEach(link => {
         menuHumb.classList.remove('active');
         menuMob.classList.remove('active');
         document.body.classList.remove('no-scroll');
-       
+
     });
 });
 
@@ -138,36 +168,35 @@ var swiperWorkflowGallery = new Swiper(".workflow-gallery__swiper", {
     lazy: true,
     loop: true,
     effect: "fade",
-    // autoplay: {
-    //     delay: 2000,
-    //     disableOnInteraction: false,
-    //     pauseOnMouseEnter: false,
-    // },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
+    },
     navigation: {
         nextEl: ".workflow-gallery__nav",
-        // prevEl: ".icon--arrow-left",
     },
 
 });
- // Инициализация Fancybox
-        Fancybox.bind("[data-fancybox]", {
-            Thumbs: {
-                type: "classic",
-            },
-            Toolbar: {
-                display: {
-                    left: ["infobar"],
-                    middle: ["zoomIn", "zoomOut", "toggle1to1", "rotateCCW", "rotateCW"],
-                    right: ["slideshow", "thumbs", "close"],
-                },
-            },
-            Images: {
-                zoom: true,
-            },
-            caption: (fancybox, slide) => {
-                return slide.caption || '';
-            }
-        });
+// Инициализация Fancybox
+Fancybox.bind("[data-fancybox]", {
+    Thumbs: {
+        type: "classic",
+    },
+    Toolbar: {
+        display: {
+            left: ["infobar"],
+            middle: ["zoomIn", "zoomOut", "toggle1to1", "rotateCCW", "rotateCW"],
+            right: ["slideshow", "thumbs", "close"],
+        },
+    },
+    Images: {
+        zoom: true,
+    },
+    caption: (fancybox, slide) => {
+        return slide.caption || '';
+    }
+});
 
 document.querySelectorAll('.contact-form__tab').forEach(tab => {
     tab.addEventListener('click', () => {

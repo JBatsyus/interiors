@@ -18,6 +18,23 @@
 
     &__swiper {
         position: relative;
+
+        @include mobile {
+            .workflow-gallery__list {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(8, 324px);
+                justify-items: center;
+            }
+        }
+
+        // Если навигация имеет класс swiper-button-lock (7 строк)
+        &:has(.workflow-gallery__nav.swiper-button-lock) {
+            @include mobile {
+                .workflow-gallery__list {
+                    grid-template-rows: repeat(7, 324px);
+                }
+            }
+        }
     }
 
     &__list {
@@ -34,8 +51,11 @@
             grid-template-rows: repeat(3, 280px);
         }
 
-        @include mobile {
-            justify-content: center;
+        .workflow-gallery__item {
+            @include mobile {
+                grid-column: 1 !important;
+                grid-row: auto !important;
+            }
         }
 
         .workflow-gallery__item:nth-child(1) {
@@ -58,7 +78,6 @@
         }
 
         .workflow-gallery__item:nth-child(3) {
-
             grid-column: 3 / span 2;
             grid-row: 1 / 3;
 
@@ -96,7 +115,6 @@
                 grid-column: 3 / 4;
                 grid-row: 2;
             }
-
         }
 
         .workflow-gallery__item:nth-child(7) {
@@ -121,7 +139,7 @@
 
         @include mobile {
             width: auto;
-            
+
             height: 324px;
             aspect-ratio: 1;
         }
@@ -183,6 +201,12 @@
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(3, 280px);
         }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(8, 324px);
+            justify-items: center;
+        }
     }
 
     .container-nav.container {
@@ -205,6 +229,12 @@
             grid-row: 3;
         }
 
+        @include mobile {
+            grid-column: 1;
+            grid-row: 8;
+            width: 324px;
+        }
+
         .next {
             font-weight: 400;
             font-size: 20px;
@@ -213,7 +243,6 @@
             text-align: center;
             max-width: 180px;
             text-transform: uppercase;
-
         }
     }
 }
