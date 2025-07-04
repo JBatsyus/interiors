@@ -166,7 +166,7 @@ document.querySelectorAll('.menu-mob a').forEach(link => {
 
 var swiperWorkflowGallery = new Swiper(".workflow-gallery__swiper", {
     lazy: true,
-    loop: true,
+    // loop: true,
     // effect: "fade",
     // autoplay: {
     //     delay: 3000,
@@ -174,7 +174,8 @@ var swiperWorkflowGallery = new Swiper(".workflow-gallery__swiper", {
     //     pauseOnMouseEnter: false,
     // },
     navigation: {
-        nextEl: ".workflow-gallery__nav",
+        nextEl: ".icon--arrow-right",
+        prevEl: ".icon--arrow-left",
     },
 
 });
@@ -270,5 +271,3 @@ gsap.to(".pin-container", {
 
 // Установить общее количество изображений
 counterTotal.textContent = String(images.length).padStart(2, '0');
-
-
