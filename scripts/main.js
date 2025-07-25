@@ -243,7 +243,7 @@ gsap.to(".pin-container", {
         trigger: ".scroll-section",
         start: "top top",
         end: "+=100%",
-        scrub: true,
+        scrub:  0.5,
         pin: true,
         onUpdate: ({
             progress
@@ -266,7 +266,7 @@ gsap.to(".pin-container", {
             }
         }
     },
-    duration: 1
+    duration: 2
 });
 
 // Установить общее количество изображений
