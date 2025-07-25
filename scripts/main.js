@@ -152,28 +152,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// var swiper = new Swiper(".mySwiper", {
-//     slidesPerView: 1,
-//     spaceBetween: 20,
-//     loop: true,
-//     effect: 'fade',
-//     pagination: {
-//         el: ".counter",
-//         type: "fraction",
-//     },
-//     fadeEffect: {
-//         crossFade: true
-//     }
+var swiper = new Swiper(".mySwiper", {
 
-// });
-// var swiper2 = new Swiper(".mySwiper2", {
-//     slidesPerView: 1,
-//     effect: 'fade',
-//     mousewheel: true,
-//     thumbs: {
-//         swiper: swiper,
-//     },
-// });
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    effect: 'fade',
+    pagination: {
+        el: ".counter",
+        type: "fraction",
+    },
+    fadeEffect: {
+        crossFade: true
+    }
+
+});
+var swiper2 = new Swiper(".mySwiper2", {
+    slidesPerView: 1,
+    effect: 'fade',
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
+    },
+    // mousewheel:true,
+    thumbs: {
+        swiper: swiper,
+    },
+});
 
 
 var swiperWorkflowGallery = new Swiper(".workflow-gallery__swiper", {
@@ -238,93 +244,4 @@ document.querySelectorAll('.contact-form__tab').forEach(tab => {
 /// mask
 $(function () {
     $(".input-phone").mask("+7 (999) 999 - 99 - 99");
-});
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Определяем мобильное устройство
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-
-    // Инициализация Swiper
-    var thumbsSwiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            type: "fraction",
-        },
-        allowTouchMove: isMobile // Включаем свайп только на мобильных
-    });
-
-    var mainSwiper = new Swiper(".mySwiper2", {
-        slidesPerView: 1,
-        effect: 'fade',
-        mousewheel: {
-            forceToAxis: true,
-            sensitivity: isMobile ? 1.5 : 0.8 // Увеличиваем чувствительность для мобильных
-        },
-        thumbs: {
-            swiper: thumbsSwiper
-        },
-        allowTouchMove: isMobile, // Включаем свайп только на мобильных
-        speed: isMobile ? 300 : 600 // Уменьшаем скорость анимации для мобильных
-    });
-
-    // Инициализация GSAP ScrollTrigger только для десктопов
-    if (!isMobile) {
-        gsap.registerPlugin(ScrollTrigger);
-
-        function initScrollAnimation() {
-            var pinContainer = document.querySelector('.pin-container');
-            var slideCount = mainSwiper.slides.length;
-            var scrollDistance = slideCount * window.innerHeight;
-
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-
-            ScrollTrigger.create({
-                trigger: pinContainer,
-                start: "top top",
-                end: "+=" + scrollDistance,
-                pin: true,
-                anticipatePin: 1,
-                scrub: 0.5,
-                onUpdate: function (self) {
-                    var progress = self.progress * (slideCount - 1);
-                    var currentSlide = Math.floor(progress);
-
-                    if (currentSlide !== mainSwiper.activeIndex && !mainSwiper.destroyed) {
-                        mainSwiper.slideTo(currentSlide);
-                    }
-                },
-                onEnter: function () {
-                    if (!mainSwiper.destroyed) mainSwiper.mousewheel.enable();
-                },
-                onLeaveBack: function () {
-                    if (!mainSwiper.destroyed) mainSwiper.mousewheel.disable();
-                }
-            });
-
-            ScrollTrigger.refresh();
-        }
-
-        initScrollAnimation();
-        window.addEventListener('resize', initScrollAnimation);
-    }
-
-    // Оптимизация для мобильных устройств
-    if (isMobile) {
-        // Увеличиваем область свайпа
-        document.querySelectorAll('.swiper').forEach(swiper => {
-            swiper.style.touchAction = 'pan-y';
-            swiper.style.overflow = 'visible';
-        });
-
-        // Добавляем инерцию при скролле
-        mainSwiper.params.mousewheel.releaseOnEdges = true;
-        mainSwiper.params.mousewheel.invert = false;
-    }
 });
