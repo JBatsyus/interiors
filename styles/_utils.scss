@@ -18,8 +18,11 @@
     }
 }
 
-body.no-scroll {
+html.no-scroll {
+    position: fixed;
+    inset: 0;
     overflow: hidden;
+
 }
 
 // скрыть элемент на ширине 768 и более

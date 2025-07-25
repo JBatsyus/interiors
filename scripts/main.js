@@ -1,5 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    const lenis = new Lenis({
+        duration: 1.2,
+        orientation: "vertical",
+        gestureOrientation: "vertical",
+        smoothWheel: true,
+        smoothTouch: false,
+        touchMultiplier: 2,
+    });
+
+    // Оптимизированный RAF цикл
+    let isAnimating = true;
+
+    function raf(time) {
+        if (isAnimating) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+    }
+    requestAnimationFrame(raf);
+
     // Функция для удаления якоря из URL
     function removeAnchorFromUrl() {
         if (window.location.hash) {
@@ -120,44 +140,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 250);
     });
 
+    // Мобильное меню
+
+    const menuHumb = document.querySelector('.menu-humb');
+    const menuMob = document.querySelector('.menu-mob');
 
 
-});
-
-
-
-const menuHumb = document.querySelector('.menu-humb');
-const menuMob = document.querySelector('.menu-mob');
-const header = document.querySelector('.header');
-
-// Обработчик клика на бургер
-menuHumb.addEventListener('click', function (e) {
-    e.stopPropagation();
-    this.classList.toggle('active');
-    menuMob.classList.toggle('active');
-    document.body.classList.toggle('no-scroll');
-
-});
-
-// Закрытие меню при клике вне его
-document.addEventListener('click', function (e) {
-    if (!e.target.closest('.menu-mob') && !e.target.closest('.menu-humb')) {
-        menuHumb.classList.remove('active');
-        menuMob.classList.remove('active');
-        document.body.classList.remove('no-scroll');
-
-    }
-});
-
-// Закрытие при клике на ссылки
-document.querySelectorAll('.menu-mob a').forEach(link => {
-    link.addEventListener('click', () => {
-        menuHumb.classList.remove('active');
-        menuMob.classList.remove('active');
-        document.body.classList.remove('no-scroll');
-
+    menuHumb.addEventListener('click', function (e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        menuMob.classList.toggle('active');
+        document.documentElement.classList.toggle('no-scroll');
     });
+
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.menu-mob') && !e.target.closest('.menu-humb')) {
+            menuHumb.classList.remove('active');
+            menuMob.classList.remove('active');
+            document.documentElement.classList.remove('no-scroll');
+        }
+    });
+
+    var links = document.querySelectorAll('.menu-mob a');
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function () {
+            menuHumb.classList.remove('active');
+            menuMob.classList.remove('active');
+            document.documentElement.classList.remove('no-scroll');
+        });
+    }
+
+
 });
+
 
 
 
@@ -243,7 +258,7 @@ gsap.to(".pin-container", {
         trigger: ".scroll-section",
         start: "top top",
         end: "+=200%",
-        scrub:  0.5,
+        scrub: 0.5,
         pin: true,
         onUpdate: ({
             progress

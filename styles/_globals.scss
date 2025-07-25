@@ -1,5 +1,8 @@
 @use 'helpers'as *;
 
+html {
+  scroll-behavior: initial;
+}
 
 body {
     @include fluid-text(26, 14);
