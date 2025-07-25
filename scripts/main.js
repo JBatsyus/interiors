@@ -239,8 +239,8 @@ gsap.to(".pin-container", {
     scrollTrigger: {
         trigger: ".scroll-section",
         start: "top top",
-        end: isMobile ? `+=${images.length * 50}%` : "+=50%", // Увеличиваем end на мобилках
-        scrub: 0.5, // Чуть резче на мобилках
+        end: isMobile ? `+=${images.length * 50}%` : "+=100%", // Увеличиваем end на мобилках
+        scrub: 0.5, 
         pin: true,
         onUpdate: ({
             progress
