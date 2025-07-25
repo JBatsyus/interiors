@@ -943,31 +943,41 @@ a[class] {
   position: relative;
 }
 
-.pin-container .container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
 .pin-container {
   position: relative;
   height: 100vh;
   min-height: 730px;
   overflow: hidden;
 }
-.pin-container__image-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
+
+.pin-container__image-wrapper.mySwiper2 {
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.pin-container__info-box {
+
+.swiper-wrapper .image {
+  height: 100vh;
+  transition: opacity 0.5s ease-in-out;
+}
+.swiper-wrapper .image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.swiper-wrapper .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.mySwiper.pin-container__info-box {
   position: absolute;
+  width: 60%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -977,7 +987,7 @@ a[class] {
   text-align: center;
 }
 @media (width <= 47.99875rem) {
-  .pin-container__info-box {
+  .mySwiper.pin-container__info-box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -988,103 +998,63 @@ a[class] {
   }
 }
 
-.image-wrapper__inner {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+.mySwiper .info-content {
+  display: flex;
 }
-
-.image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-.image--active {
-  opacity: 1;
-}
-.image picture {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.info-content {
-  display: none;
-}
-.info-content__right {
+.mySwiper .info-content__right {
   width: 37.5vw;
   padding-top: 70px;
   position: relative;
 }
 @media (width <= 63.99875rem) {
-  .info-content__right {
+  .mySwiper .info-content__right {
     width: 350px;
   }
 }
 @media (width <= 47.99875rem) {
-  .info-content__right {
+  .mySwiper .info-content__right {
     padding-top: 76px;
     width: 100%;
   }
 }
-.info-content .h3 {
+.mySwiper .info-content .h3 {
   margin-bottom: 40px;
   font-weight: 200;
   font-size: 32px;
   line-height: 1.5625;
 }
 @media (width <= 63.99875rem) {
-  .info-content .h3 {
+  .mySwiper .info-content .h3 {
     margin-bottom: 20px;
   }
 }
 @media (width <= 47.99875rem) {
-  .info-content .h3 {
+  .mySwiper .info-content .h3 {
     margin-bottom: 40px;
     font-size: 20px;
     line-height: 1.1;
   }
 }
-.info-content--active {
-  display: flex;
-  column-gap: 40px;
-}
-@media (width <= 47.99875rem) {
-  .info-content--active {
-    align-items: center;
-    flex-direction: column;
-  }
-}
-.info-content__image {
+.mySwiper .info-content__image {
   height: 400px;
   width: 600px;
 }
 @media (width <= 63.99875rem) {
-  .info-content__image {
+  .mySwiper .info-content__image {
     width: 350px;
   }
 }
 @media (width <= 47.99875rem) {
-  .info-content__image {
+  .mySwiper .info-content__image {
     height: 230px;
     width: 305px;
   }
 }
-.info-content__image img {
+.mySwiper .info-content__image img {
   height: 100%;
   object-fit: cover;
 }
-.info-content__desc {
+.mySwiper .info-content__desc {
   font-family: var(--font-family-accent);
   font-weight: 400;
   font-size: 20px;
@@ -1093,48 +1063,51 @@ a[class] {
   min-height: 200px;
 }
 @media (width <= 63.99875rem) {
-  .info-content__desc {
+  .mySwiper .info-content__desc {
     font-size: 14px;
   }
 }
 @media (width <= 47.99875rem) {
-  .info-content__desc {
+  .mySwiper .info-content__desc {
     line-height: 1.14286;
     max-width: 600px;
     min-height: 210px;
   }
 }
 
-.counter {
+.mySwiper .counter {
   position: absolute;
   top: 40px;
-  left: calc(50% + 279px);
+  left: 25%;
   font-weight: 200;
   font-size: 14px;
   line-height: 2.14286;
   text-align: center;
+  z-index: 20;
 }
 @media (width <= 63.99875rem) {
-  .counter {
+  .mySwiper .counter {
     left: calc(50% + 146px);
   }
 }
 @media (width <= 47.99875rem) {
-  .counter {
+  .mySwiper .counter {
     left: 50%;
     transform: translateX(-50%);
     top: 45%;
     line-height: 1.14286;
   }
 }
-.counter__current {
-  color: var(--color-white);
-}
-.counter__separator {
+.mySwiper .counter__separator {
   margin-left: 10px;
   color: rgba(255, 255, 255, 0.55);
 }
-.counter__total {
+
+.mySwiper .counter .swiper-pagination-current {
+  color: var(--color-white);
+}
+
+.mySwiper .counter .swiper-pagination-total {
   margin-left: 10px;
   color: rgba(255, 255, 255, 0.55);
 }

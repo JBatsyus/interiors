@@ -152,10 +152,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// var swiper = new Swiper(".mySwiper", {
+//     slidesPerView: 1,
+//     spaceBetween: 20,
+//     loop: true,
+//     effect: 'fade',
+//     pagination: {
+//         el: ".counter",
+//         type: "fraction",
+//     },
+//     fadeEffect: {
+//         crossFade: true
+//     }
 
-
-
-
+// });
+// var swiper2 = new Swiper(".mySwiper2", {
+//     slidesPerView: 1,
+//     effect: 'fade',
+//     mousewheel: true,
+//     thumbs: {
+//         swiper: swiper,
+//     },
+// });
 
 
 var swiperWorkflowGallery = new Swiper(".workflow-gallery__swiper", {
@@ -222,46 +240,83 @@ $(function () {
     $(".input-phone").mask("+7 (999) 999 - 99 - 99");
 });
 
-gsap.registerPlugin(ScrollTrigger);
 
-const images = document.querySelectorAll('.image');
-const infoContents = document.querySelectorAll('.info-content');
-const counterCurrent = document.querySelector('.counter__current');
-const counterTotal = document.querySelector('.counter__total');
 
-let currentImageIndex = 0;
 
-// Пиним контейнер
-gsap.to(".pin-container", {
-    scrollTrigger: {
-        trigger: ".scroll-section",
-        start: "top top",
-        end: "+=200%",
-        scrub: 0.5,
-        pin: true,
-        onUpdate: ({
-            progress
-        }) => {
-            const index = Math.min(images.length - 1, Math.floor(progress * images.length));
 
-            if (index !== currentImageIndex) {
-                // Скрыть текущее изображение и текст
-                images[currentImageIndex].classList.remove('image--active');
-                infoContents[currentImageIndex].classList.remove('info-content--active');
+document.addEventListener('DOMContentLoaded', function () {
+    // Инициализация Swiper
+    var thumbsSwiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        pagination: {
+            el: ".counter ",
+            type: "fraction",
+        },
+        allowTouchMove: false
+    });
 
-                // Показать новое изображение и текст
-                images[index].classList.add('image--active');
-                infoContents[index].classList.add('info-content--active');
+    var mainSwiper = new Swiper(".mySwiper2", {
+        slidesPerView: 1,
+        effect: 'fade',
+        mousewheel: {
+            forceToAxis: true,
+            sensitivity: 0.5
+        },
+        thumbs: {
+            swiper: thumbsSwiper
+        },
+        allowTouchMove: false
+    });
 
-                // Обновить счетчик
-                counterCurrent.textContent = String(index + 1).padStart(2, '0');
+    // Регистрируем плагин ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
 
-                currentImageIndex = index;
+    // Функция для инициализации анимации
+    function initScrollAnimation() {
+        var pinContainer = document.querySelector('.pin-container');
+        var slideCount = mainSwiper.slides.length;
+        var scrollDistance = slideCount * window.innerHeight;
+
+        // Очищаем предыдущие триггеры (если есть)
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+        // Создаем новый ScrollTrigger
+        ScrollTrigger.create({
+            trigger: pinContainer,
+            start: "top top",
+            end: "+=" + scrollDistance,
+            pin: true,
+            anticipatePin: 1,
+            scrub: 0.5,
+            onUpdate: function (self) {
+                var progress = self.progress * (slideCount - 1);
+                var currentSlide = Math.floor(progress);
+
+                if (currentSlide !== mainSwiper.activeIndex && !mainSwiper.destroyed) {
+                    mainSwiper.slideTo(currentSlide);
+                }
+            },
+            onEnter: function () {
+                if (!mainSwiper.destroyed) mainSwiper.mousewheel.enable();
+            },
+            onLeaveBack: function () {
+                if (!mainSwiper.destroyed) mainSwiper.mousewheel.disable();
             }
-        }
-    },
-    duration: 2
-});
+        });
 
-// Установить общее количество изображений
-counterTotal.textContent = String(images.length).padStart(2, '0');
+        // Обновляем ScrollTrigger после инициализации
+        ScrollTrigger.refresh();
+    }
+
+    // Инициализируем анимацию
+    initScrollAnimation();
+
+    // Обновляем при ресайзе
+    window.addEventListener('resize', function () {
+        initScrollAnimation();
+    });
+});

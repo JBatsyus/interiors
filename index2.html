@@ -186,102 +186,100 @@
         <!-- BEGIN SECTION SCROLL -->
         <div class="scroll-section" id="product">
             <div class="pin-container">
-                <div class="pin-container__image-wrapper swiper mySwiper2">
-                    <div class="swiper-wrapper">
-                        <!-- Добавлен swiper-wrapper -->
-                        <div class="swiper-slide">
-                            <div class="image" data-index="0">
-                                <!-- Добавлен swiper-slide -->
-                                <picture>
-                                    <source srcset="./images/scroll-block/slide1.webp" type="image/webp" />
-                                    <img class="swiper-lazy" data-src="./images/scroll-block/slide1.webp"
-                                        alt="Image 1" />
-                                </picture>
-
-                            </div>
+                <div class="pin-container__image-wrapper">
+                    <div class="image-wrapper__inner">
+                        <div class="image image--active" data-index="0">
+                            <picture>
+                                <source srcset="./images/scroll-block/slide1.webp" type="image/webp" />
+                                <img src="./images/scroll-block/slide1.webp" alt="Image 1" />
+                            </picture>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="image" data-index="1">
-                                <picture>
-                                    <source srcset="./images/scroll-block/slide2.webp" type="image/webp" />
-                                    <img class="swiper-lazy" data-src="./images/scroll-block/slide2.webp"
-                                        alt="Image 2" />
-                                </picture>
-
-                            </div>
+                        <div class="image" data-index="1">
+                            <picture>
+                                <source srcset="./images/scroll-block/slide2.webp" type="image/webp" />
+                                <img src="./images/scroll-block/slide2.webp" alt="Image 2" />
+                            </picture>
                         </div>
-                        <div class="swiper-slide">
-
-                            <div class="image" data-index="2">
-                                <picture>
-                                    <source srcset="./images/scroll-block/slide3.webp" type="image/webp" />
-                                    <img class="swiper-lazy" data-src="./images/scroll-block/slide3.webp"
-                                        alt="Image 3" />
-                                </picture>
-
-                            </div>
+                        <div class="image" data-index="2">
+                            <picture>
+                                <source srcset="./images/scroll-block/slide3.webp" type="image/webp" />
+                                <img src="./images/scroll-block/slide3.webp" alt="Image 3" />
+                            </picture>
                         </div>
                     </div>
                 </div>
 
-                <div class="pin-container__info-box info-box swiper mySwiper" thumbsSlider="">
-                    <div class="info-box__counter counter ">
-                        <div class="swiper-pagination"></div>
-                        <!-- <span class="counter__current">01</span>
+                <div class="pin-container__info-box info-box">
+                    <div class="info-box__counter counter">
+                        <span class="counter__current">01</span>
                         <span class="counter__separator">-</span>
-                        <span class="counter__total">05</span> -->
+                        <span class="counter__total">05</span>
+                    </div>
+                    <div class="info-box__content info-content info-content--active" data-index="0">
+                        <div class="info-content__image">
+                            <picture>
+                                <source media="(max-width: 767.98px)" srcset="./images/scroll-block/slide1-1-1.webp" />
+                                <img src="./images/scroll-block/slide1-1.webp" alt="Thumb 1" />
+                            </picture>
+                        </div>
+                        <div class="info-content__right">
+                            <div class="h3">Кухни</div>
+                            <p class="info-content__desc">
+                                Кухни OTTEES — безупречный симбиоз роскоши и повседневного
+                                комфорта. Это не просто мебель и место для приготовления пищи,
+                                а продуманное пространство, где эргономика встречается с
+                                искусством, а функциональность — с безупречным вкусом.
+                                Эксклюзивные материалы, авторские решения и инновационные
+                                технологии. Фасады, достойные статуса арт-объекта, и
+                                механизмы, работающие с точностью швейцарских часов. Кухни
+                                OTTEES — вдохновляйтесь каждым моментом.
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="info-box__content-wrapper swiper-wrapper">
-                        <!-- Обертка для thumbs -->
-                        <div class="swiper-slide">
-                            <div class="info-content" data-index="0">
-                                <div class="info-content__image">
-                                    <img src="./images/scroll-block/slide1-1.webp" alt="Thumb 1" />
-                                </div>
-                                <div class="info-content__right">
-                                    <div class="h3">Кухни</div>
-                                    <p class="info-content__desc">
-                                        Кухни OTTEES — безупречный симбиоз роскоши и повседневного
-                                        комфорта. Это не просто мебель и место для приготовления
-                                        пищи, а продуманное пространство, где эргономика встречается
-                                        с искусством, а функциональность — с безупречным вкусом.
-                                        Эксклюзивные материалы, авторские решения и инновационные
-                                        технологии...
-                                    </p>
-                                </div>
-                            </div>
+                    <div class="info-box__content info-content" data-index="1">
+                        <div class="info-content__image">
+                            <picture>
+                                <source media="(max-width: 767.98px)" srcset="./images/scroll-block/slide2-1-1.webp" />
+                                <img src="./images/scroll-block/slide2-1.webp" alt="Thumb 1" />
+                            </picture>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="info-content" data-index="1">
-                                <div class="info-content__image">
-                                    <img src="./images/scroll-block/slide2-1.webp" alt="Thumb 2" />
-                                </div>
-                                <div class="info-content__right">
-                                    <div class="h3">Гардеробные</div>
-                                    <p class="info-content__desc">
-                                        Гардеробные OTTEES — гармоничное сочетание элегантности и
-                                        безупречного порядка. Интеллектуальные системы хранения
-                                        позволяют учитывать каждый сантиметр пространства...
-                                    </p>
-                                </div>
-                            </div>
+                        <div class="info-content__right">
+                            <div class="h3">Гардеробные</div>
+                            <p class="info-content__desc">
+                                Гардеробные OTTEES — гармоничное сочетание элегантности и
+                                безупречного порядка. Интеллектуальные системы хранения
+                                позволяют учитывать каждый сантиметр пространства.
+                                Эргономичные решения индивидуально адаптируются под ваш образ
+                                жизни, а безупречные линии фасадов становятся украшением
+                                интерьера. Гардеробные OTTEES способны превратить порядок в
+                                искусство, а ежедневные ритуалы — в удовольствие.
+                            </p>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="info-content swiper-slide" data-index="2">
-                                <div class="info-content__image">
-                                    <img class="swiper-lazy" src="./images/scroll-block/slide3-1.webp" alt="Thumb 3" />
-                                </div>
-                                <div class="info-content__right">
-                                    <div class="h3">Санузлы</div>
-                                    <p class="info-content__desc">
-                                        Санузлы OTTEES — комплекты мебели, которые способны добавить
-                                        элегантности в интерьер ванных комнат и сделать пространство
-                                        максимально функциональным и удобным для всех членов
-                                        семьи...
-                                    </p>
-                                </div>
-                            </div>
+                    </div>
+
+                    <div class="info-box__content info-content" data-index="2">
+                        <div class="info-content__image">
+                            <picture>
+                                <source media="(max-width: 767.98px)" srcset="./images/scroll-block/slide3-1-1.webp" />
+                                <img src="./images/scroll-block/slide3-1.webp" alt="Thumb 1" />
+                            </picture>
+                        </div>
+                        <div class="info-content__right">
+                            <div class="h3">Санузлы</div>
+                            <p class="info-content__desc">
+                                Санузлы OTTEES — комплекты мебели, которые способны добавить
+                                элегантности в интерьер ванных комнат и сделать пространство
+                                максимально функциональным и удобным для всех членов семьи.
+                                Каждое наше решение — это тщательно продуманные формы,
+                                качественные материалы и эргономичные конструкции, прекрасно
+                                вписывающиеся в помещения любой площади. Функциональность
+                                здесь не противоречит эстетике: скрытые полки, выдвижные
+                                системы и продуманная компоновка освобождают пространство,
+                                сохраняя стиль. Санузлы OTTEES — это гармония удобства,
+                                качества и лаконичного дизайна для тех, кто ценит разумную
+                                организацию быта.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -476,6 +474,7 @@
                                             class="fancybox-source"></a>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                         <div class="container-nav container">
@@ -731,3 +730,219 @@
 </body>
 
 </html>
+
+скролл
+
+@use "../helpers"as *;
+
+.scroll-section {
+    position: relative;
+}
+
+.pin-container .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+
+.pin-container {
+    position: relative;
+    height: 100vh;
+    min-height: 730px;
+    overflow: hidden;
+
+    &__image-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__info-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--color-base);
+        padding: 40px;
+        column-gap: 40px;
+        text-align: center;
+
+        @include mobile {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            bottom: auto;
+            transform: translate(-50%, -50%);
+            width: 91%;
+            padding: 65px 12px;
+        }
+    }
+}
+
+.image-wrapper__inner {
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &--active {
+        opacity: 1;
+    }
+
+    picture {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.info-content {
+    display: none;
+
+    &__right {
+        width: 37.5vw;
+        padding-top: 70px;
+        position: relative;
+
+        @include tablet {
+            width: 350px;
+        }
+
+        @include mobile {
+            padding-top: 76px;
+            width: 100%;
+        }
+    }
+
+
+    .h3 {
+
+        margin-bottom: 40px;
+        font-weight: 200;
+        font-size: 32px;
+        line-height: 1.5625;
+
+        @include tablet {
+            margin-bottom: 20px;
+        }
+
+        @include mobile {
+            margin-bottom: 40px;
+            font-size: 20px;
+            line-height: 1.1;
+        }
+    }
+
+    &--active {
+        display: flex;
+        column-gap: 40px;
+
+        @include tablet {}
+
+        @include mobile {
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+
+    &__image {
+        height: 400px;
+        width: 600px;
+
+        @include tablet {
+            width: 350px;
+        }
+
+        @include mobile {
+            height: 230px;
+            width: 305px;
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+    }
+
+    &__desc {
+        font-family: var(--font-family-accent);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.15;
+        text-align: center;
+
+        min-height: 200px;
+
+        @include tablet {
+            font-size: 14px;
+        }
+
+        @include mobile {
+            line-height: 1.14286;
+            max-width: 600px;
+            min-height: 210px;
+        }
+    }
+}
+
+.counter {
+    position: absolute;
+    top: 40px;
+    left: calc(50% + 279px);
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 2.14286;
+    text-align: center;
+
+    @include tablet {
+        left: calc(50% + 146px);
+    }
+
+    @include mobile {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 45%;
+        line-height: 1.14286;
+    }
+
+    &__current {
+        color: var(--color-white);
+    }
+
+    &__separator {
+        margin-left: 10px;
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    &__total {
+        margin-left: 10px;
+        color: rgba(255, 255, 255, 0.55);
+    }
+}
