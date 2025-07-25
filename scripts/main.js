@@ -171,12 +171,12 @@ var swiper2 = new Swiper(".mySwiper2", {
     slidesPerView: 1,
     effect: 'fade',
     speed: 300,
-    // autoplay: {
-    //     delay: 3000,
-    //     disableOnInteraction: false,
-    //     pauseOnMouseEnter: false,
-    // },
-    mousewheel: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
+    },
+    // mousewheel: true,
     thumbs: {
         swiper: swiper,
     },
