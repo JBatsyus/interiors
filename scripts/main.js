@@ -1,25 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    const lenis = new Lenis({
-        duration: 1.2,
-        orientation: "vertical",
-        gestureOrientation: "vertical",
-        smoothWheel: true,
-        smoothTouch: false,
-        touchMultiplier: 2,
-    });
-
-    // Оптимизированный RAF цикл
-    let isAnimating = true;
-
-    function raf(time) {
-        if (isAnimating) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-    }
-    requestAnimationFrame(raf);
-
     // Функция для удаления якоря из URL
     function removeAnchorFromUrl() {
         if (window.location.hash) {
