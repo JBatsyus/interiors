@@ -4,12 +4,12 @@
     position: relative;
 }
 
-// .pin-container .container {
-//     position: relative;
-//     width: 100%;
-//     height: 100%;
-//     overflow: hidden;
-// }
+.pin-container .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
 
 
@@ -18,21 +18,59 @@
     height: 100vh;
     min-height: 730px;
     overflow: hidden;
+
+    &__image-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__info-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--color-base);
+        padding: 40px;
+        column-gap: 40px;
+        text-align: center;
+
+        @include mobile {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            bottom: auto;
+            transform: translate(-50%, -50%);
+            width: 91%;
+            padding: 65px 12px;
+        }
+    }
 }
 
-.pin-container__image-wrapper.mySwiper2 {
-    position: relative;
+.image-wrapper__inner {
+
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
 }
 
-.swiper-wrapper .image {
-    height: 100vh;
+.image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
     transition: opacity 0.5s ease-in-out;
 
+    &--active {
+        opacity: 1;
+    }
 
     picture {
         display: block;
@@ -48,32 +86,8 @@
     }
 }
 
-.mySwiper.pin-container__info-box {
-    position: absolute;
-    width: 60%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--color-base);
-    padding: 40px;
-    column-gap: 40px;
-    text-align: center;
-
-    @include mobile {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        bottom: auto;
-        transform: translate(-50%, -50%);
-        width: 91%;
-        padding: 65px 12px;
-    }
-}
-
-
-
-.mySwiper .info-content {
-    display: flex;
+.info-content {
+    display: none;
 
     &__right {
         width: 37.5vw;
@@ -109,7 +123,17 @@
         }
     }
 
+    &--active {
+        display: flex;
+        column-gap: 40px;
 
+        @include tablet {}
+
+        @include mobile {
+            align-items: center;
+            flex-direction: column;
+        }
+    }
 
     &__image {
         height: 400px;
@@ -153,15 +177,14 @@
     }
 }
 
-.mySwiper .counter {
+.counter {
     position: absolute;
     top: 40px;
-    left: 25%;
+    left: calc(50% + 279px);
     font-weight: 200;
     font-size: 14px;
     line-height: 2.14286;
     text-align: center;
-    z-index: 20;
 
     @include tablet {
         left: calc(50% + 146px);
@@ -174,26 +197,17 @@
         line-height: 1.14286;
     }
 
+    &__current {
+        color: var(--color-white);
+    }
+
     &__separator {
         margin-left: 10px;
         color: rgba(255, 255, 255, 0.55);
     }
 
-}
-
-.mySwiper .counter .swiper-pagination-current {
-    color: var(--color-white);
-}
-
-.mySwiper .counter .swiper-pagination-total {
-    margin-left: 10px;
-    color: rgba(255, 255, 255, 0.55);
-}
-
-.pin-container {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
+    &__total {
+        margin-left: 10px;
+        color: rgba(255, 255, 255, 0.55);
+    }
 }

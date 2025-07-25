@@ -152,35 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-var swiper = new Swiper(".mySwiper", {
 
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    effect: 'fade',
-    pagination: {
-        el: ".counter",
-        type: "fraction",
-    },
-    fadeEffect: {
-        crossFade: true
-    }
 
-});
-var swiper2 = new Swiper(".mySwiper2", {
-    slidesPerView: 1,
-    effect: 'fade',
-    speed: 300,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: false,
-    },
-    // mousewheel: true,
-    thumbs: {
-        swiper: swiper,
-    },
-});
+
+
 
 
 var swiperWorkflowGallery = new Swiper(".workflow-gallery__swiper", {
@@ -246,3 +221,53 @@ document.querySelectorAll('.contact-form__tab').forEach(tab => {
 $(function () {
     $(".input-phone").mask("+7 (999) 999 - 99 - 99");
 });
+
+gsap.registerPlugin(ScrollTrigger);
+
+const images = document.querySelectorAll('.image');
+const infoContents = document.querySelectorAll('.info-content');
+const counterCurrent = document.querySelector('.counter__current');
+const counterTotal = document.querySelector('.counter__total');
+
+let currentImageIndex = 0;
+
+// Определяем, мобильное ли устройство
+const isMobile = window.matchMedia('(max-width: 767.98px)').matches;
+
+// Пиним контейнер и настраиваем анимацию
+gsap.to(".pin-container", {
+    scrollTrigger: {
+        trigger: ".scroll-section",
+        start: "top top",
+        end: isMobile ? `+=${images.length * 200}%` : "+=100%", // Увеличиваем end на мобилках
+        scrub: 0.5,
+        pin: true,
+        onUpdate: ({
+            progress
+        }) => {
+            const index = Math.min(
+                images.length - 1,
+                Math.floor(progress * images.length)
+            );
+
+            if (index !== currentImageIndex) {
+                // Скрыть текущее изображение и текст
+                images[currentImageIndex].classList.remove('image--active');
+                infoContents[currentImageIndex].classList.remove('info-content--active');
+
+                // Показать новое изображение и текст
+                images[index].classList.add('image--active');
+                infoContents[index].classList.add('info-content--active');
+
+                // Обновить счетчик
+                counterCurrent.textContent = String(index + 1).padStart(2, '0');
+
+                currentImageIndex = index;
+            }
+        },
+    },
+    duration: 2,
+});
+
+// Установить общее количество изображений
+counterTotal.textContent = String(images.length).padStart(2, '0');
