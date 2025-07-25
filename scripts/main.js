@@ -242,9 +242,10 @@ $(function () {
 
 
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
+    // Определяем мобильное устройство
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
     // Инициализация Swiper
     var thumbsSwiper = new Swiper(".mySwiper", {
         slidesPerView: 1,
@@ -253,10 +254,10 @@ document.addEventListener('DOMContentLoaded', function () {
             crossFade: true
         },
         pagination: {
-            el: ".counter ",
+            el: ".swiper-pagination",
             type: "fraction",
         },
-        allowTouchMove: false
+        allowTouchMove: isMobile // Включаем свайп только на мобильных
     });
 
     var mainSwiper = new Swiper(".mySwiper2", {
@@ -264,59 +265,66 @@ document.addEventListener('DOMContentLoaded', function () {
         effect: 'fade',
         mousewheel: {
             forceToAxis: true,
-            sensitivity: 0.5
+            sensitivity: isMobile ? 1.5 : 0.8 // Увеличиваем чувствительность для мобильных
         },
         thumbs: {
             swiper: thumbsSwiper
         },
-        allowTouchMove: false
+        allowTouchMove: isMobile, // Включаем свайп только на мобильных
+        speed: isMobile ? 300 : 600 // Уменьшаем скорость анимации для мобильных
     });
 
-    // Регистрируем плагин ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
+    // Инициализация GSAP ScrollTrigger только для десктопов
+    if (!isMobile) {
+        gsap.registerPlugin(ScrollTrigger);
 
-    // Функция для инициализации анимации
-    function initScrollAnimation() {
-        var pinContainer = document.querySelector('.pin-container');
-        var slideCount = mainSwiper.slides.length;
-        var scrollDistance = slideCount * window.innerHeight;
+        function initScrollAnimation() {
+            var pinContainer = document.querySelector('.pin-container');
+            var slideCount = mainSwiper.slides.length;
+            var scrollDistance = slideCount * window.innerHeight;
 
-        // Очищаем предыдущие триггеры (если есть)
-        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
-        // Создаем новый ScrollTrigger
-        ScrollTrigger.create({
-            trigger: pinContainer,
-            start: "top top",
-            end: "+=" + scrollDistance,
-            pin: true,
-            anticipatePin: 1,
-            scrub: 0.5,
-            onUpdate: function (self) {
-                var progress = self.progress * (slideCount - 1);
-                var currentSlide = Math.floor(progress);
+            ScrollTrigger.create({
+                trigger: pinContainer,
+                start: "top top",
+                end: "+=" + scrollDistance,
+                pin: true,
+                anticipatePin: 1,
+                scrub: 0.5,
+                onUpdate: function (self) {
+                    var progress = self.progress * (slideCount - 1);
+                    var currentSlide = Math.floor(progress);
 
-                if (currentSlide !== mainSwiper.activeIndex && !mainSwiper.destroyed) {
-                    mainSwiper.slideTo(currentSlide);
+                    if (currentSlide !== mainSwiper.activeIndex && !mainSwiper.destroyed) {
+                        mainSwiper.slideTo(currentSlide);
+                    }
+                },
+                onEnter: function () {
+                    if (!mainSwiper.destroyed) mainSwiper.mousewheel.enable();
+                },
+                onLeaveBack: function () {
+                    if (!mainSwiper.destroyed) mainSwiper.mousewheel.disable();
                 }
-            },
-            onEnter: function () {
-                if (!mainSwiper.destroyed) mainSwiper.mousewheel.enable();
-            },
-            onLeaveBack: function () {
-                if (!mainSwiper.destroyed) mainSwiper.mousewheel.disable();
-            }
-        });
+            });
 
-        // Обновляем ScrollTrigger после инициализации
-        ScrollTrigger.refresh();
+            ScrollTrigger.refresh();
+        }
+
+        initScrollAnimation();
+        window.addEventListener('resize', initScrollAnimation);
     }
 
-    // Инициализируем анимацию
-    initScrollAnimation();
+    // Оптимизация для мобильных устройств
+    if (isMobile) {
+        // Увеличиваем область свайпа
+        document.querySelectorAll('.swiper').forEach(swiper => {
+            swiper.style.touchAction = 'pan-y';
+            swiper.style.overflow = 'visible';
+        });
 
-    // Обновляем при ресайзе
-    window.addEventListener('resize', function () {
-        initScrollAnimation();
-    });
+        // Добавляем инерцию при скролле
+        mainSwiper.params.mousewheel.releaseOnEdges = true;
+        mainSwiper.params.mousewheel.invert = false;
+    }
 });
