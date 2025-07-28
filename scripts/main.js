@@ -240,7 +240,6 @@ gsap.to(".pin-container", {
         trigger: ".scroll-section",
         start: "top top",
         end: isMobile ? `+=${images.length * 180}%` : "+=300%", // Увеличиваем end на мобилках
-        scrub: 0.5, 
         pin: true,
         onUpdate: ({
             progress
