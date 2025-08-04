@@ -4,73 +4,33 @@
     position: relative;
 }
 
-.pin-container .container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-
-
 .pin-container {
     position: relative;
     height: 100vh;
     min-height: 730px;
     overflow: hidden;
 
-    &__image-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    &__info-box {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: var(--color-base);
-        padding: 40px;
-        column-gap: 40px;
-        text-align: center;
-
-        @include mobile {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            bottom: auto;
-            transform: translate(-50%, -50%);
-            width: 91%;
-            padding: 65px 12px;
-        }
-    }
 }
 
-.image-wrapper__inner {
+.pin-container .swiper-button-next,
+.pin-container .swiper-button-prev {
+    color: var(--color-white);
+}
 
+.pin-container__image-wrapper.mySwiper2 {
+    position: relative;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
+.mySwiper2 .swiper-wrapper .image {
+    height: 100vh;
+    min-height: 730px;
     transition: opacity 0.5s ease-in-out;
 
-    &--active {
-        opacity: 1;
-    }
 
     picture {
         display: block;
@@ -86,8 +46,37 @@
     }
 }
 
-.info-content {
-    display: none;
+.mySwiper.pin-container__info-box {
+    position: absolute;
+    width: 75vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-base);
+    padding: 40px;
+    column-gap: 40px;
+    text-align: center;
+
+    @include mobile {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        padding: 65px 12px;
+    }
+}
+
+
+
+.mySwiper .info-content {
+    display: flex;
+    gap: 40px;
+
+    @include mobile {
+        flex-direction: column;
+    }
 
     &__right {
         width: 37.5vw;
@@ -123,21 +112,13 @@
         }
     }
 
-    &--active {
-        display: flex;
-        column-gap: 40px;
 
-        @include tablet {}
-
-        @include mobile {
-            align-items: center;
-            flex-direction: column;
-        }
-    }
 
     &__image {
         height: 400px;
         width: 600px;
+        align-self: center;
+
 
         @include tablet {
             width: 350px;
@@ -177,18 +158,20 @@
     }
 }
 
-.counter {
+.mySwiper .counter {
     position: absolute;
+    width: auto;
     top: 40px;
-    left: calc(50% + 279px);
+    left: 72%;
     font-weight: 200;
     font-size: 14px;
     line-height: 2.14286;
     text-align: center;
+    z-index: 20;
 
-    @include tablet {
-        left: calc(50% + 146px);
-    }
+    // @include tablet {
+    //     left: calc(50% + 146px);
+    // }
 
     @include mobile {
         left: 50%;
@@ -197,17 +180,18 @@
         line-height: 1.14286;
     }
 
-    &__current {
-        color: var(--color-white);
-    }
-
     &__separator {
         margin-left: 10px;
         color: rgba(255, 255, 255, 0.55);
     }
 
-    &__total {
-        margin-left: 10px;
-        color: rgba(255, 255, 255, 0.55);
-    }
+}
+
+.mySwiper .counter .swiper-pagination-current {
+    color: var(--color-white);
+}
+
+.mySwiper .counter .swiper-pagination-total {
+    margin-left: 10px;
+    color: rgba(255, 255, 255, 0.55);
 }
