@@ -49,6 +49,7 @@
 .mySwiper.pin-container__info-box {
     position: absolute;
     width: 75vw;
+    max-width: 1440px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -129,8 +130,14 @@
             width: 305px;
         }
 
+        @include mobile-s {
+
+            width: 290px;
+        }
+
         img {
             height: 100%;
+            width: 100%;
             object-fit: cover;
         }
 
@@ -162,7 +169,7 @@
     position: absolute;
     width: auto;
     top: 40px;
-    left: 72%;
+    left: 70%;
     font-weight: 200;
     font-size: 14px;
     line-height: 2.14286;
