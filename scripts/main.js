@@ -198,17 +198,13 @@ var swiper2 = new Swiper(".mySwiper2", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
-    // autoplay: {
-    //     delay: 3000,
-    //     disableOnInteraction: false,
-    //     pauseOnMouseEnter: false,
-    // },
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
+    },
 
-    // speed: 300,
-    // mousewheel: {
-    //     enabled: true,
-    //     releaseOnEdges: true,
-    // },
+    speed: 800,
     thumbs: {
         swiper: swiper,
     },

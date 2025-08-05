@@ -945,8 +945,6 @@ a[class] {
 
 .pin-container {
   position: relative;
-  height: 100vh;
-  min-height: 730px;
   overflow: hidden;
 }
 
@@ -1001,7 +999,7 @@ a[class] {
     bottom: auto;
     transform: translate(-50%, -50%);
     width: 80%;
-    padding: 65px 12px;
+    padding: 40px 20px;
   }
 }
 
@@ -1012,6 +1010,7 @@ a[class] {
 @media (width <= 47.99875rem) {
   .mySwiper .info-content {
     flex-direction: column;
+    gap: 20px;
   }
 }
 .mySwiper .info-content__right {
